@@ -9,7 +9,23 @@ footer {
     margin-top: auto;
 }
 
+main {
+    background-color: #212425;
+    color: white;
+    accent-color: grey;
+    min-height: 82vh;
+}
+
 .dropdown-text {
     color: white;
     accent-color: grey;
+}
+
+.OW2Logo {
+    width: 25%;
+    margin-left: 37.5%;
+}
+
+.my-btn {
+    margin-left: 145px;
 }
