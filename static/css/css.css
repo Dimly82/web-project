@@ -8,3 +8,8 @@ body {
 footer {
     margin-top: auto;
 }
+
+.dropdown-text {
+    color: white;
+    accent-color: grey;
+}
