@@ -27,5 +27,10 @@ main {
 }
 
 .my-btn {
-    margin-left: 145px;
+    margin-left: 7vw;
+}
+
+.btn-img {
+    height: 45vh;
+    width: 45vh;
 }
