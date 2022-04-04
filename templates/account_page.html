@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block import %}
+<title>{{ current_user.nickname }}'s page</title>
+{% endblock %}
+
+{% block content %}
+<h1 class="orange centre">Welcome, {{ current_user.nickname }}</h1>
+{% endblock %}
