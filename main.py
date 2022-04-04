@@ -2,14 +2,21 @@ import os
 from data import db_session
 
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/", methods=["POST", "GET"])
 def index():
+    if request.method == "POST" and request.form.get('player'):
+        return redirect(f"/search/{request.form.get('player')}")
     return render_template("index.html")
+
+
+@app.route("/search/<string:player>")
+def search(player):
+    return render_template("search.html")
 
 
 @app.route("/register")
