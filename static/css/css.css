@@ -11,13 +11,13 @@ footer {
 
 main {
     background-color: #212425;
-    color: white;
+    color: orange;
     accent-color: grey;
     min-height: 82vh;
 }
 
 .dropdown-text {
-    color: white;
+    color: orange;
     accent-color: grey;
 }
 
@@ -44,4 +44,9 @@ main {
     text-align: center;
     margin-top: 50px;
     color: orange;
+}
+
+.ya-logo {
+    color: #6c757d;
+    text-decoration: none;
 }
