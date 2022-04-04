@@ -2,3 +2,4 @@ Flask
 wtforms
 flask_wtf
 sqlalchemy
+flask_login
