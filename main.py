@@ -12,6 +12,11 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/register")
+def register():
+    return render_template("register_form.html")
+
+
 if __name__ == '__main__':
     db_session.global_init("db/users.db")
     port = int(os.environ.get("PORT", 5000))
