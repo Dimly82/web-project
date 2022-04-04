@@ -1,14 +1,21 @@
-from flask_wtf import FlaskForm
-from wtforms import PasswordField, StringField, TextAreaField, SubmitField, EmailField
-from wtforms.validators import DataRequired
+import sqlalchemy
+from flask_login import UserMixin
+from werkzeug.security import check_password_hash, generate_password_hash
+
+from .db_session import SqlAlchemyBase
 
 
-class RegisterForm(FlaskForm):
-    email = EmailField('Email', validators=[DataRequired()])
-    battle_tag = StringField('Battle Tag', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    password_again = PasswordField('Repeat Password', validators=[DataRequired()])
-    name = StringField('Name', validators=[DataRequired()])
-    submit = SubmitField('Sign In')
+class User(SqlAlchemyBase, UserMixin):
+    __tablename__ = "users"
 
-Class
+    id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
+    name = sqlalchemy.Column(sqlalchemy.String)
+    battle_tag = sqlalchemy.Column(sqlalchemy.String)
+    email = sqlalchemy.Column(sqlalchemy.String, unique=True)
+    hashed_password = sqlalchemy.Column(sqlalchemy.String)
+
+    def set_password(self, password):
+        self.hashed_password = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.hashed_password, password)
