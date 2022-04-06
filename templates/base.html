@@ -39,7 +39,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Menu
+                               <img src="{{ current_user.avatar }}" alt="" width="32" height="32">
+                                {{ current_user.nickname }}
                             </a>
                             <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item dropdown-text" href="#">Wiki</a></li>
@@ -51,7 +52,7 @@
                                 <li><a class="dropdown-item dropdown-text" href="/logout">Logout</a></li>
                             </ul>
                         </li>
-                    {% else %}
+                    {% else %}  
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -12,6 +12,7 @@ class User(SqlAlchemyBase, UserMixin):
     nickname = sqlalchemy.Column(sqlalchemy.String, unique=True)
     battle_tag = sqlalchemy.Column(sqlalchemy.String)
     email = sqlalchemy.Column(sqlalchemy.String, unique=True)
+    avatar = sqlalchemy.Column(sqlalchemy.String, default="static/img/user_image.webp")
     hashed_password = sqlalchemy.Column(sqlalchemy.String)
 
     def set_password(self, password):

@@ -14,7 +14,7 @@ app = Flask(__name__)
 SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
 
-db_session.global_init("db/users.db")
+db_session.global_init("db/users.sqlite")
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -33,13 +33,17 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/search/<string:player>")
+@app.route("/search/<string:player>", methods=["POST", "GET"])
 def search(player):
+    if request.method == "POST" and request.form.get('player'):
+        return redirect(f"/search/{request.form.get('player')}")
     return render_template("search.html")
 
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    if request.method == "POST" and request.form.get('player'):
+        return redirect(f"/search/{request.form.get('player')}")
     form = RegisterForm()
     if form.validate_on_submit():
         if form.password.data != form.password_again.data:
@@ -69,8 +73,10 @@ def register():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == "POST" and request.form.get('player'):
+        return redirect(f"/search/{request.form.get('player')}")
     form = LoginForm()
-    if form.validate_on_submit():
+    if form.validate_on_submit():   
         db_sess = db_session.create_session()
         user = db_sess.query(User).filter(User.nickname == form.nickname.data).first()
         if user and user.check_password(form.password.data):
@@ -82,9 +88,11 @@ def login():
     return render_template('login.html', form=form)
 
 
-@app.route("/account")
+@app.route("/account", methods=["POST", "GET"])
 @login_required
 def account():
+    if request.method == "POST" and request.form.get('player'):
+        return redirect(f"/search/{request.form.get('player')}")
     return render_template("account_page.html")
 
 

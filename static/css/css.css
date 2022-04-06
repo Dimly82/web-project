@@ -16,6 +16,20 @@ main {
     min-height: 82vh;
 }
 
+.user-info {
+    text-align: center;
+    width: 60%;
+    margin-left: 20%;
+}
+
+.user-info img {
+    width: 15%;
+}
+
+.user-info a {
+    margin-top: 15px;
+}
+
 .orange {
     color: orange;
 }
