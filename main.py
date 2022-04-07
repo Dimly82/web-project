@@ -1,5 +1,6 @@
 import os
 
+from PIL import Image
 from flask import Flask, render_template, request, redirect
 from flask_login import login_user, LoginManager, login_required, logout_user
 
@@ -9,6 +10,7 @@ from data.db_session import create_session
 from data.login_form import LoginForm
 from data.register_form import RegisterForm
 from data.edit_form import EditForm
+from defs import crop_max_square
 
 app = Flask(__name__)
 
@@ -119,6 +121,8 @@ def edit_account():
             with open(f"static/img/{form.id.data}.png", mode="wb") as av:
                 av.write(avatar)
             user.avatar = f"static/img/{form.id.data}.png"
+            im = crop_max_square(Image.open(f"static/img/{form.id.data}.png")).save(f"static/img/{form.id.data}_thmb.png")
+            user.thumbnail = f"static/img/{form.id.data}_thmb.png"
         db_sess.commit()
         return redirect("/")
     return render_template("edit_account.html", form=form)
