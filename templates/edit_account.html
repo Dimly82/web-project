@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block import %}
+<title>Editting Account</title>
+{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center;">Editting {{ current_user.nickname }}'s account</h1>
+<form class="edit" action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.nickname.label }}<br>
+        {{ form.nickname(class="form-control bg-dark", style="color: orange;") }}<br>
+        {% for error in form.nickname.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    <p>
+        {{ form.email.label }}<br>
+        {{ form.email(class="form-control bg-dark", style="color: orange;", type="email") }}<br>
+        {% for error in form.email.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    <p>
+        {{ form.battle_tag.label }}<br>
+        {{ form.battle_tag(class="form-control bg-dark", style="color: orange;") }}<br>
+        {% for error in form.battle_tag.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    <p>
+        {{ form.current_password.label }}<br>
+        {{ form.current_password(class="form-control bg-dark", style="color: orange;", type="password") }}<br>
+        {% for error in form.current_password.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+    <p>
+        {{ form.new_password.label }}<br>
+        {{ form.new_password(class="form-control bg-dark", style="color: orange;", type="password") }}<br>
+        {% for error in form.new_password.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        <p>
+            {{ form.avatar.label }}
+            {{ form.avatar(class="form-control", class="bg-dark") }}
+            {% for error in form.avatar.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+            {% endfor %}
+    <p>{{ form.submit(type="submit", class="btn", style="background-color: orange;") }}</p>
+    {{message}}
+</form>
+{% endblock %}

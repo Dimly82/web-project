@@ -16,6 +16,12 @@ main {
     min-height: 82vh;
 }
 
+.edit {
+    text-align: center;
+    width: 30%;
+    margin-left: 35%;
+}
+
 .user-info {
     text-align: center;
     width: 60%;

@@ -8,6 +8,7 @@ from data.__all_models import *
 from data.db_session import create_session
 from data.login_form import LoginForm
 from data.register_form import RegisterForm
+from data.edit_form import EditForm
 
 app = Flask(__name__)
 
@@ -94,6 +95,12 @@ def account():
     if request.method == "POST" and request.form.get('player'):
         return redirect(f"/search/{request.form.get('player')}")
     return render_template("account_page.html")
+
+
+@app.route("/account/edit", methods=["POST", "GET"])
+def edit_account():
+    form = EditForm()
+    return render_template("edit_account.html", form=form)
 
 
 @app.route("/logout")
