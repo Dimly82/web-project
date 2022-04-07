@@ -6,11 +6,12 @@
 
 {% block content %}
 <h1 style="text-align: center;">Editting {{ current_user.nickname }}'s account</h1>
-<form class="edit" action="" method="post">
+<form class="edit" action="" method="post" enctype="multipart/form-data">
     {{ form.hidden_tag() }}
+    {{ form.id(value=current_user.id, type="hidden") }}
     <p>
         {{ form.nickname.label }}<br>
-        {{ form.nickname(class="form-control bg-dark", style="color: orange;") }}<br>
+        {{ form.nickname(class="form-control bg-dark", style="color: orange;", value=current_user.nickname) }}<br>
         {% for error in form.nickname.errors %}
     <p class="alert alert-danger" role="alert">
         {{ error }}
@@ -18,7 +19,7 @@
     {% endfor %}
     <p>
         {{ form.email.label }}<br>
-        {{ form.email(class="form-control bg-dark", style="color: orange;", type="email") }}<br>
+        {{ form.email(class="form-control bg-dark", style="color: orange;", type="email", value=current_user.email) }}<br>
         {% for error in form.email.errors %}
     <p class="alert alert-danger" role="alert">
         {{ error }}
@@ -26,7 +27,7 @@
     {% endfor %}
     <p>
         {{ form.battle_tag.label }}<br>
-        {{ form.battle_tag(class="form-control bg-dark", style="color: orange;") }}<br>
+        {{ form.battle_tag(class="form-control bg-dark", style="color: orange;", value=current_user.battle_tag) }}<br>
         {% for error in form.battle_tag.errors %}
     <p class="alert alert-danger" role="alert">
         {{ error }}
@@ -49,8 +50,8 @@
         </p>
         {% endfor %}
         <p>
-            {{ form.avatar.label }}
-            {{ form.avatar(class="form-control", class="bg-dark") }}
+            {{ form.avatar.label(class="form-label", for="formFile") }}
+            {{ form.avatar(class="form-control", class="bg-dark", accept="image/png, image/jpeg") }}
             {% for error in form.avatar.errors %}
             <p class="alert alert-danger" role="alert">
                 {{ error }}

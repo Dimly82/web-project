@@ -98,8 +98,29 @@ def account():
 
 
 @app.route("/account/edit", methods=["POST", "GET"])
+@login_required
 def edit_account():
+    if request.method == "POST" and request.form.get('player'):
+        return redirect(f"/search/{request.form.get('player')}")
     form = EditForm()
+    if form.validate_on_submit():
+        db_sess = db_session.create_session()
+        user = db_sess.query(User).get(form.id.data)
+        if form.new_password.data:
+            if form.current_password.data and user.check_password(form.current_password.data):
+                user.set_password(form.new_password.data)
+            else:
+                return render_template("edit_account.html", form=form, message="Wrong current password")
+        user.nickname = form.nickname.data
+        user.email = form.email.data
+        user.battle_tag = form.battle_tag.data
+        avatar = form.avatar.data.read()
+        if len(avatar) > 0:
+            with open(f"static/img/{form.id.data}.png", mode="wb") as av:
+                av.write(avatar)
+            user.avatar = f"static/img/{form.id.data}.png"
+        db_sess.commit()
+        return redirect("/")
     return render_template("edit_account.html", form=form)
 
 
