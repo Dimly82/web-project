@@ -10,7 +10,8 @@ from data.db_session import create_session
 from data.login_form import LoginForm
 from data.register_form import RegisterForm
 from data.edit_form import EditForm
-from defs import crop_max_square
+from defs import *
+from api import get_stats
 
 app = Flask(__name__)
 
@@ -32,21 +33,24 @@ def load_user(user_id):
 @app.route("/", methods=["POST", "GET"])
 def index():
     if request.method == "POST" and request.form.get('player'):
-        return redirect(f"/search/{request.form.get('player')}")
+        return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
     return render_template("index.html")
 
 
 @app.route("/search/<string:player>", methods=["POST", "GET"])
 def search(player):
     if request.method == "POST" and request.form.get('player'):
-        return redirect(f"/search/{request.form.get('player')}")
+        return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
+    if player:
+        stats = get_stats(player)
+        return render_template("search.html", stats=stats)
     return render_template("search.html")
 
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == "POST" and request.form.get('player'):
-        return redirect(f"/search/{request.form.get('player')}")
+        return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
     form = RegisterForm()
     if form.validate_on_submit():
         if form.password.data != form.password_again.data:
@@ -77,7 +81,7 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == "POST" and request.form.get('player'):
-        return redirect(f"/search/{request.form.get('player')}")
+        return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
     form = LoginForm()
     if form.validate_on_submit():
         db_sess = db_session.create_session()
@@ -95,7 +99,7 @@ def login():
 @login_required
 def account():
     if request.method == "POST" and request.form.get('player'):
-        return redirect(f"/search/{request.form.get('player')}")
+        return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
     return render_template("account_page.html")
 
 
@@ -103,7 +107,7 @@ def account():
 @login_required
 def edit_account():
     if request.method == "POST" and request.form.get('player'):
-        return redirect(f"/search/{request.form.get('player')}")
+        return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
     form = EditForm()
     if form.validate_on_submit():
         db_sess = db_session.create_session()
