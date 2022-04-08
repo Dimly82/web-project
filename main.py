@@ -79,7 +79,7 @@ def login():
     if request.method == "POST" and request.form.get('player'):
         return redirect(f"/search/{request.form.get('player')}")
     form = LoginForm()
-    if form.validate_on_submit():   
+    if form.validate_on_submit():
         db_sess = db_session.create_session()
         user = db_sess.query(User).filter(User.nickname == form.nickname.data).first()
         if user and user.check_password(form.password.data):
@@ -112,7 +112,8 @@ def edit_account():
             if form.current_password.data and user.check_password(form.current_password.data):
                 user.set_password(form.new_password.data)
             else:
-                return render_template("edit_account.html", form=form, message="Wrong current password")
+                return render_template("edit_account.html", form=form,
+                                       message="Wrong current password")
         user.nickname = form.nickname.data
         user.email = form.email.data
         user.battle_tag = form.battle_tag.data
@@ -121,7 +122,8 @@ def edit_account():
             with open(f"static/img/{form.id.data}.png", mode="wb") as av:
                 av.write(avatar)
             user.avatar = f"static/img/{form.id.data}.png"
-            im = crop_max_square(Image.open(f"static/img/{form.id.data}.png")).save(f"static/img/{form.id.data}_thmb.png")
+            im = crop_max_square(Image.open(f"static/img/{form.id.data}.png")).save(
+                f"static/img/{form.id.data}_thmb.png")
             user.thumbnail = f"static/img/{form.id.data}_thmb.png"
         db_sess.commit()
         return redirect("/")

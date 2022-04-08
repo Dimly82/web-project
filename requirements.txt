@@ -1,5 +1,7 @@
-Flask
-wtforms
-flask_wtf
-sqlalchemy
-flask_login
+Flask==2.1.1
+wtforms~=3.0.1
+flask_wtf==1.0.1
+sqlalchemy==1.4.35
+flask_login==0.6.0
+Werkzeug==2.1.1
+Pillow==9.1.0
