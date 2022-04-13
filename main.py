@@ -1,17 +1,18 @@
+import json
 import os
 
 from PIL import Image
 from flask import Flask, render_template, request, redirect
 from flask_login import login_user, LoginManager, login_required, logout_user
 
+from api import get_stats
 from data import db_session
 from data.__all_models import *
 from data.db_session import create_session
+from data.edit_form import EditForm
 from data.login_form import LoginForm
 from data.register_form import RegisterForm
-from data.edit_form import EditForm
 from defs import *
-from api import get_stats
 
 app = Flask(__name__)
 
@@ -126,12 +127,26 @@ def edit_account():
             with open(f"static/img/{form.id.data}.png", mode="wb") as av:
                 av.write(avatar)
             user.avatar = f"static/img/{form.id.data}.png"
-            im = crop_max_square(Image.open(f"static/img/{form.id.data}.png")).save(
+            crop_max_square(Image.open(f"static/img/{form.id.data}.png")).save(
                 f"static/img/{form.id.data}_thmb.png")
             user.thumbnail = f"static/img/{form.id.data}_thmb.png"
         db_sess.commit()
         return redirect("/")
     return render_template("edit_account.html", form=form)
+
+
+@app.route("/wiki")
+def wiki():
+    with open("static/json/heroes.json") as js:
+        heroes = json.load(js)
+    return render_template("wiki_main.html", heroes=heroes)
+
+
+@app.route("/wiki/<string:hero>")
+def wiki_hero(hero):
+    with open("static/json/heroes.json") as js:
+        heroes = json.load(js)
+    return hero
 
 
 @app.route("/logout")

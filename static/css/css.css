@@ -16,6 +16,14 @@ main {
     min-height: 82vh;
 }
 
+.hero-card {
+    color: orange;
+}
+
+.role-div {
+    margin-left: 25px;
+}
+
 .centre-div {
     width: 30%;
     margin-left: 35%;
@@ -66,10 +74,6 @@ main {
     margin-left: 37.5%;
 }
 
-.my-btn {
-    margin-left: 7vw;
-}
-
 .btn-img {
     height: 45vh;
     width: 23vw;
@@ -77,6 +81,8 @@ main {
 
 .btn-div {
     margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .register {

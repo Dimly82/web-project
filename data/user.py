@@ -12,7 +12,7 @@ class User(SqlAlchemyBase, UserMixin):
     nickname = sqlalchemy.Column(sqlalchemy.String, unique=True)
     battle_tag = sqlalchemy.Column(sqlalchemy.String)
     email = sqlalchemy.Column(sqlalchemy.String, unique=True)
-    avatar = sqlalchemy.Column(sqlalchemy.String, default="static/img/user_image.webp")
+    avatar = sqlalchemy.Column(sqlalchemy.String, default="static/img/user.png")
     thumbnail = sqlalchemy.Column(sqlalchemy.String, default="static/img/user.png")
     hashed_password = sqlalchemy.Column(sqlalchemy.String)
 
