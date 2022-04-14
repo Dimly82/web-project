@@ -148,6 +148,12 @@ def wiki_hero(hero):
         heroes = json.load(js)
     return hero
 
+@app.route("/quiz")
+def quiz():
+    with open("static/json/quiz.json") as js:
+        quizs = json.load(js)
+    return render_template("quizs_main.html", quizs=quizs)
+
 
 @app.route("/logout")
 @login_required
