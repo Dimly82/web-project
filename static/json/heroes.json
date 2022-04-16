@@ -6,9 +6,9 @@
       60,
       "Egyptian",
       {
-        "lmb": ["Unscoped", 70, 70, null, null],
-        "rmb": ["Scoped", 70, 70, null, null],
-        "lshift": ["Sleep Dart", 5, null, 5, 12],
+        "lmb": ["Unscoped", 70, 70, 0, 0],
+        "rmb": ["Scoped", 70, 70, 0, 0],
+        "lshift": ["Sleep Dart", 5, 0, 5, 12],
         "e": ["Biotic Grenade", 60, 100, 4, 10],
         "q": ["Nano Boost", "+50%", 250, 8, "2100 points"]
       }
@@ -19,10 +19,10 @@
       36,
       "Haitian",
       {
-        "lmb": ["Biotic Launcher", "7.2 - 24", null, null, null],
-        "rmb": ["Biotic Launcher", null, "50 - 70", null, null],
-        "lshift": ["Regenerative Burst", null, "15 - 30", 5, 13],
-        "e": ["Immortality Field", null, null, 5, 25],
+        "lmb": ["Biotic Launcher", "7.2 - 24", 0, 0, 0],
+        "rmb": ["Biotic Launcher", 0, "50 - 70", 0, 0],
+        "lshift": ["Regenerative Burst", 0, "15 - 30", 5, 13],
+        "e": ["Immortality Field", 0, 0, 5, 25],
         "q": ["Amplification Matrix", "+100%", "+100%", 10, "2310 points"]
       }
     ],
@@ -32,11 +32,11 @@
       23,
       "Swedish",
       {
-        "lmb": ["Rocket Flail", 35, null, null, null],
-        "rmb": ["Barrier Shield", null, 250, null, 5],
-        "lshift": ["Whip Shot", 70, null, null, 4],
-        "e": ["Repair Pack", null, 110, 2, 6],
-        "q": ["Rally", null, 100, 10, "2800 points"]
+        "lmb": ["Rocket Flail", 35, 0, 0, 0],
+        "rmb": ["Barrier Shield", 0, 250, 0, 5],
+        "lshift": ["Whip Shot", 70, 0, 0, 4],
+        "e": ["Repair Pack", 0, 110, 2, 6],
+        "q": ["Rally", 0, 100, 10, "2800 points"]
       }
     ],
     "Lucio": [
@@ -45,11 +45,11 @@
       26,
       "Brazilian",
       {
-        "lmb": ["Sonic Amplifier", 20, null, null, null],
-        "rmb": ["Soundwave", 25, null, null, 4],
-        "lshift": ["Crossfade", null, 16, null, null],
-        "e": ["Amp It Up", null, 52, 3, 12],
-        "q": ["Sound Barrier", null, 750, 7, "2940 points"]
+        "lmb": ["Sonic Amplifier", 20, 0, 0, 0],
+        "rmb": ["Soundwave", 25, 0, 0, 4],
+        "lshift": ["Crossfade", 0, 16, 0, 0],
+        "e": ["Amp It Up", 0, 52, 3, 12],
+        "q": ["Sound Barrier", 0, 750, 7, "2940 points"]
       }
     ],
     "Mercy": [
@@ -58,10 +58,10 @@
       37,
       "Swiss",
       {
-        "lmb": ["Caduceus Staff", null, 55, null, null],
-        "rmb": ["Caduceus Staff", "+30%", null, null, null],
-        "lshift": ["Guardian Angel", null, null, null, 1.5],
-        "e": ["Resurrect", null, "Full", null, 30],
+        "lmb": ["Caduceus Staff", 0, 55, 0, 0],
+        "rmb": ["Caduceus Staff", "+30%", 0, 0, 0],
+        "lshift": ["Guardian Angel", 0, 0, 0, 1.5],
+        "e": ["Resurrect", 0, "Full", 0, 30],
         "q": ["Valkyrie", "+30%", 60, 15, "1820 points"]
       }
     ],
@@ -71,9 +71,9 @@
       48,
       "Irish",
       {
-        "lmb": ["Biotic Grasp", null, 70, 2, null],
-        "rmb": ["Biotic Grasp", 50, null, null, null],
-        "lshift": ["Fade", null, null, 0.8, 6],
+        "lmb": ["Biotic Grasp", 0, 70, 2, 0],
+        "rmb": ["Biotic Grasp", 50, 0, 0, 0],
+        "lshift": ["Fade", 0, 0, 0.8, 6],
         "e": ["Biotic Orb", 50, 65, 7, 8],
         "q": ["Coalescence", 70, 140, 8, "2800 points"]
       }
@@ -84,11 +84,11 @@
       20,
       "Omnic",
       {
-        "lmb": ["Orb of Destruction", 48, null, null, null],
-        "rmb": ["Orb of Destruction", 240, null, null, null],
-        "lshift": ["Orb of Harmony", null, 30, 3, null],
-        "e": ["Orb of Discord", "+25%", null, 3, null],
-        "q": ["Transcendence", null, 300, 6, "2310 points"]
+        "lmb": ["Orb of Destruction", 48, 0, 0, 0],
+        "rmb": ["Orb of Destruction", 240, 0, 0, 0],
+        "lshift": ["Orb of Harmony", 0, 30, 3, 0],
+        "e": ["Orb of Discord", "+25%", 0, 3, 0],
+        "q": ["Transcendence", 0, 300, 6, "2310 points"]
       }
     ]
   },

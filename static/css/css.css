@@ -16,6 +16,11 @@ main {
     min-height: 82vh;
 }
 
+.hero-info {
+    width: 30%;
+    margin-left: 35%;
+}
+
 .hero-card {
     color: orange;
 }
