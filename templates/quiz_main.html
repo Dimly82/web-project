@@ -1,37 +1,18 @@
 {% extends "base.html" %}
 
 {% block import %}
-<title>Quiz - Main Page</title>
+<title>Quiz - Choose your guess</title>
 {% endblock %}
 
 {% block content %}
-<div class="role-div">
-    <h1>Easy</h1>
-    {% for task in quizs['easy'].keys() %}
-        <a class="hero-card btn btn-dark" type="button" href="/wiki/{{ task }}">
-            <img src="{{ quizs['easy'][task][0] }}" alt="">
-            <p style="font-size: 24px">{{ task }}</p>
+    <div class="btn-div" style="margin-top: 10%">
+        <a class="hero-card btn btn-dark" type="button" href="#">
+            <img class="btn-img" src="../static/img/music.png" alt="">
+            <p style="font-size: 40px">Soundtrack</p>
         </a>
-    {% endfor %}
-    <br>
-</div>
-<div class="role-div">
-    <h1>Middle</h1>
-    {% for task in quizs['middle'].keys() %}
-        <a class="hero-card btn btn-dark" type="button" href="/wiki/{{ task }}">
-            <img src="{{ quizs['middle'][task][0] }}" alt="">
-            <p style="font-size: 24px">{{ task }}</p>
+        <a class="hero-card btn btn-dark" type="button" href="#">
+            <img class="btn-img" src="../static/img/copy.png" alt="">
+            <p style="font-size: 40px">Photos</p>
         </a>
-    {% endfor %}
-    <br>
-</div>
-<div class="role-div">
-    <h1>Hard</h1>
-    {% for task in quizs['hard'].keys() %}
-        <a class="hero-card btn btn-dark" type="button" href="/wiki/{{ task }}">
-            <img src="{{ quizs['hard'][task][0] }}" alt="">
-            <p style="font-size: 24px">{{ task }}</p>
-        </a>
-    {% endfor %}
-</div>
+    </div>
 {% endblock %}

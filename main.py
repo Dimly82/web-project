@@ -127,6 +127,7 @@ def edit_account():
             with open(f"static/img/{form.id.data}.png", mode="wb") as av:
                 av.write(avatar)
             user.avatar = f"static/img/{form.id.data}.png"
+            user.avatar = f"static/img/{form.id.data}.png"
             crop_max_square(Image.open(f"static/img/{form.id.data}.png")).save(
                 f"static/img/{form.id.data}_thmb.png")
             user.thumbnail = f"static/img/{form.id.data}_thmb.png"
@@ -142,17 +143,27 @@ def wiki():
     return render_template("wiki_main.html", heroes=heroes)
 
 
-@app.route("/wiki/<string:hero>")
-def wiki_hero(hero):
+@app.route("/wiki/<string:name>")
+def wiki_hero(name):
     with open("static/json/heroes.json") as js:
         heroes = json.load(js)
-    return hero
+        try:
+            hero = heroes["support"][name]
+        except KeyError:
+            try:
+                hero = heroes["damage"][name]
+            except KeyError:
+                try:
+                    hero = heroes["tank"][name]
+                except KeyError:
+                    return "Something went wrong"
+    return render_template("hero_page.html", name=name, hero=hero)
 
 @app.route("/quiz")
 def quiz():
     with open("static/json/quiz.json") as js:
-        quizs = json.load(js)
-    return render_template("quizs_main.html", quizs=quizs)
+        quiz = json.load(js)
+    return render_template("quiz_main.html", quizs=quiz)
 
 
 @app.route("/logout")
@@ -164,4 +175,4 @@ def logout():
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+    app.run(host="0.0.0.0", port=port, debug=True)
