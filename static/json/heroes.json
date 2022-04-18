@@ -11,7 +11,8 @@
         "lshift": ["Sleep Dart", 5, 0, 5, 12],
         "e": ["Biotic Grenade", 60, 100, 4, 10],
         "q": ["Nano Boost", "+50%", 250, 8, "2100 points"]
-      }
+      },
+      "https://playoverwatch.com/en-gb/heroes/ana/"
     ],
     "Baptiste": [
       "https://d1u1mce87gyfbn.cloudfront.net/hero/baptiste/hero-select-portrait.png",
@@ -24,7 +25,8 @@
         "lshift": ["Regenerative Burst", 0, "15 - 30", 5, 13],
         "e": ["Immortality Field", 0, 0, 5, 25],
         "q": ["Amplification Matrix", "+100%", "+100%", 10, "2310 points"]
-      }
+      },
+      "https://playoverwatch.com/en-gb/heroes/baptiste/"
     ],
     "Brigitte": [
       "https://d1u1mce87gyfbn.cloudfront.net/hero/brigitte/hero-select-portrait.png",
@@ -37,11 +39,12 @@
         "lshift": ["Whip Shot", 70, 0, 0, 4],
         "e": ["Repair Pack", 0, 110, 2, 6],
         "q": ["Rally", 0, 100, 10, "2800 points"]
-      }
+      },
+      "https://playoverwatch.com/en-gb/heroes/brigitte/"
     ],
     "Lucio": [
       "https://d1u1mce87gyfbn.cloudfront.net/hero/lucio/hero-select-portrait.png",
-      "Lúcio Correia dos Santos",
+      "Lucio Correia dos Santos",
       26,
       "Brazilian",
       {
@@ -50,7 +53,8 @@
         "lshift": ["Crossfade", 0, 16, 0, 0],
         "e": ["Amp It Up", 0, 52, 3, 12],
         "q": ["Sound Barrier", 0, 750, 7, "2940 points"]
-      }
+      },
+      "https://playoverwatch.com/en-gb/heroes/lucio/"
     ],
     "Mercy": [
       "https://d1u1mce87gyfbn.cloudfront.net/hero/mercy/hero-select-portrait.png",
@@ -63,7 +67,8 @@
         "lshift": ["Guardian Angel", 0, 0, 0, 1.5],
         "e": ["Resurrect", 0, "Full", 0, 30],
         "q": ["Valkyrie", "+30%", 60, 15, "1820 points"]
-      }
+      },
+      "https://playoverwatch.com/en-gb/heroes/mercy/"
     ],
     "Moira": [
       "https://d1u1mce87gyfbn.cloudfront.net/hero/moira/hero-select-portrait.png",
@@ -76,7 +81,8 @@
         "lshift": ["Fade", 0, 0, 0.8, 6],
         "e": ["Biotic Orb", 50, 65, 7, 8],
         "q": ["Coalescence", 70, 140, 8, "2800 points"]
-      }
+      },
+      "https://playoverwatch.com/en-gb/heroes/moira/"
     ],
     "Zenyatta": [
       "https://d1u1mce87gyfbn.cloudfront.net/hero/zenyatta/hero-select-portrait.png",
@@ -89,7 +95,8 @@
         "lshift": ["Orb of Harmony", 0, 30, 3, 0],
         "e": ["Orb of Discord", "+25%", 0, 3, 0],
         "q": ["Transcendence", 0, 300, 6, "2310 points"]
-      }
+      },
+      "https://playoverwatch.com/en-gb/heroes/zenyatta/"
     ]
   },
   "damage": {

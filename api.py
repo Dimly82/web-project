@@ -7,5 +7,6 @@ def get_stats(battletag):
     response = requests.get(f"{API}/{battletag}/profile")
     if not response:
         return False
+    print(response.url)
     return response.json()
 
