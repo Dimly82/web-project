@@ -16,6 +16,13 @@ main {
     min-height: 82vh;
 }
 
+.player-info {
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 20px;
+    text-align: center;
+}
+
 .hero-info {
     width: 30%;
     margin-left: 35%;

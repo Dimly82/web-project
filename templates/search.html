@@ -5,22 +5,32 @@
 {% endblock %}
 
 {% block content %}
-{% if stats %}
     <h1 class="centre">Player Search</h1>
     <form class="d-flex centre-div" method="post">
         <input class="form-control me-2 bg-dark" type="search" placeholder="Search"
                aria-label="Search" style="color: orange" name="player">
         <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
-    <div class="centre-div">
-        <img style="" src="{{ stats['icon'] }}" alt="">
-    </div>
-{% else %}
-    <h1 class="centre">Player Search</h1>
-    <form class="d-flex" method="post">
-        <input class="form-control me-2 bg-dark centre-div" type="search" placeholder="Search"
-               aria-label="Search" style="color: orange" name="player">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-{% endif %}
+    {% if stats %}
+        <div class="player-info">
+            <img src="{{ stats['icon'] }}" alt="">
+            <h2>Name: {{ stats['name'] }}</h2>
+            <p style="font-size: 32px">Level: {{ 100 * stats['prestige'] + stats['level'] }}</p>
+            {% if not stats['private'] %}
+                <p style="font-size: 32px">Endorsement Level: {{ stats['endorsement'] }}</p>
+                <div class="competitive-stats">
+                    <h2>Competitive Stats:</h2>
+                    <p style="font-size: 32px">Games Played: {{ stats['competitiveStats']['games']['played'] }}</p>
+                    <p style="font-size: 32px">Games Won: {{ stats['competitiveStats']['games']['won'] }}</p>
+                    {% if stats['rating'] %}
+                        {% for rating in stats['ratings'] %}
+                            <p><img src="{{ rating['roleIcon'] }}" alt="">: {{ rating['level'] }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% else %}
+                <p style="font-size: 32px">This profile is private :(</p>
+            {% endif %}
+        </div>
+    {% endif %}
 {% endblock %}
