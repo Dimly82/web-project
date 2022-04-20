@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block import %}
+    <title>Soundtrack Quiz</title>
+{% endblock %}
+
+{% block content %}
+    <div class="sound-guess">
+        <h1>Guess the map</h1>
+        <audio class="aud" controls src="{{ data[0][num] }}" >Your browser doesn't support
+            <code>audio</code> element
+        </audio>
+    </div>
+{% endblock %}

@@ -16,6 +16,16 @@ main {
     min-height: 82vh;
 }
 
+.sound-guess {
+    width: 30%;
+    margin-left: 35%;
+    text-align: center;
+}
+
+.aud {
+    margin-top: 40px;
+}
+
 .player-info {
     width: 30%;
     margin-left: 35%;

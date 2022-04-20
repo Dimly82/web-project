@@ -1,9 +1,10 @@
 import json
 import os
+import random
 import string
 
 from PIL import Image
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 from flask_login import login_user, LoginManager, login_required, logout_user
 
 from api import get_stats
@@ -26,6 +27,15 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 alph = string.digits + string.ascii_letters
+
+quiz_id = {}
+
+with open("./static/json/quiz.json", encoding="utf8") as js:
+    js = json.load(js)
+    sound = js["soundtrack"]
+    for key in sound.keys():
+        sound[key] = os.path.join("C:\\Users\\pdimo\\PycharmProjects\\web-project\\static\\sound", sound[key])
+    photo = js["location"]
 
 
 @login_manager.user_loader
@@ -180,9 +190,16 @@ def wiki_hero(name):
 
 @app.route("/quiz")
 def quiz():
+    id = random.randint(1, 9999)
     with open("static/json/quiz.json") as js:
         quiz = json.load(js)
-    return render_template("quiz_main.html", quizs=quiz)
+    return render_template("quiz_main.html", quizs=quiz, id=id)
+
+
+@app.route("/quiz/soundtrack/<int:id>/<int:num>")
+def sound_quiz(id, num):
+    quiz_id[id] = [random.sample(list(sound.values()), 5), 0, 0]
+    return render_template("soundtrack_quiz.html", data=quiz_id[id], num=num)
 
 
 @app.route("/logout")
