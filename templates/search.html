@@ -14,12 +14,12 @@
     {% if stats %}
         <div class="player-info">
             <img src="{{ stats['icon'] }}" alt="">
-            <h2>Name: {{ stats['name'] }}</h2>
+            <p style="font-size: 40px"><b>Name: {{ stats['name'] }}</b></p>
             <p style="font-size: 32px">Level: {{ 100 * stats['prestige'] + stats['level'] }}</p>
             {% if not stats['private'] %}
                 <p style="font-size: 32px">Endorsement Level: {{ stats['endorsement'] }}</p>
                 <div class="competitive-stats">
-                    <h2>Competitive Stats:</h2>
+                    <p style="font-size: 40px"><b>Competitive Stats:</b></p>
                     <p style="font-size: 32px">Games Played: {{ stats['competitiveStats']['games']['played'] }}</p>
                     <p style="font-size: 32px">Games Won: {{ stats['competitiveStats']['games']['won'] }}</p>
                     {% if stats['rating'] %}

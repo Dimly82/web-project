@@ -1,5 +1,6 @@
 import json
 import os
+import string
 
 from PIL import Image
 from flask import Flask, render_template, request, redirect
@@ -23,6 +24,8 @@ db_session.global_init("db/users.sqlite")
 
 login_manager = LoginManager()
 login_manager.init_app(app)
+
+alph = string.digits + string.ascii_letters
 
 
 @login_manager.user_loader
@@ -67,6 +70,10 @@ def register():
             return render_template('register.html',
                                    form=form,
                                    message="This nickname is already taken")
+        if not all(el in alph for el in form.nickname.data):
+            return render_template('register.html',
+                                   form=form,
+                                   message="Nickname can't contain special symbols or spaces")
         user = User(
             nickname=form.nickname.data,
             battle_tag=form.battle_tag.data,
@@ -119,6 +126,18 @@ def edit_account():
             else:
                 return render_template("edit_account.html", form=form,
                                        message="Wrong current password")
+        if not all(el in alph for el in form.nickname.data):
+            return render_template('edit_account.html',
+                                   form=form,
+                                   message="Nickname can't contain special symbols or spaces")
+        if form.email.data != user.email and db_sess.query(User).filter(User.email == form.email.data).first():
+            return render_template('edit_account.html',
+                                   form=form,
+                                   message="This email is already used")
+        if form.nickname.data != user.nickname and db_sess.query(User).filter(User.nickname == form.nickname.data).first():
+            return render_template('edit_account.html',
+                                   form=form,
+                                   message="This nickname is already taken")
         user.nickname = form.nickname.data
         user.email = form.email.data
         user.battle_tag = form.battle_tag.data
@@ -132,7 +151,7 @@ def edit_account():
                 f"static/img/{form.id.data}_thmb.png")
             user.thumbnail = f"static/img/{form.id.data}_thmb.png"
         db_sess.commit()
-        return redirect("/")
+        return redirect("/account")
     return render_template("edit_account.html", form=form)
 
 
