@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block import %}
+  <title>Results</title>
+{% endblock %}
+
+{% block content %}
+  <div class="centre-div">
+    <h1>You passed the quiz with {{ score }}/5 score</h1>
+    <a type="button" class="btn" style="background: orange" href="/">Main Page</a>
+  </div>
+{% endblock %}

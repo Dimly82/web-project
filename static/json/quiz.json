@@ -3,10 +3,28 @@
 
   },
   "soundtrack": {
-    "Hanamura": "/static/sound/Hanamura.mp4",
-    "Eichenwalde": "/static/sound/Eichenwalde.mp4",
-    "Ilios": "/static/sound/Ilios.mp4",
-    "King's Row": "/static/sound/KR.mp4",
-    "Temple of Anubis": "/static/sound/ToA.mp4"
+    "Ayutthaya": "/static/sound/a4th.mp4",
+    "Blizzard World": "/static/sound/b567.mp4",
+    "Busan": "/static/sound/t51y.mp4",
+    "Château Guillard": "/static/sound/ctch0.mp4",
+    "Dorado": "/static/sound/df51.mp4",
+    "Hanamura": "/static/sound/chp1.mp4",
+    "Havana": "/static/sound/hy71.mp4",
+    "Hollywood": "/static/sound/hv6.mp4",
+    "Horizon Lunar Colony": "/static/sound/hlc9.mp4",
+    "Eichenwalde": "/static/sound/e6th.mp4",
+    "Ilios": "/static/sound/iop4.mp4",
+    "Junkertown": "/static/sound/jkn2.mp4",
+    "King's Row": "/static/sound/rkd2.mp4",
+    "Lijiang Tower": "/static/sound/chsh7.mp4",
+    "Nepal": "/static/sound/pln19.mp4",
+    "Numbani": "/static/sound/namb7.mp4",
+    "Oasis": "/static/sound/0o0.mp4",
+    "Paris": "/static/sound/rsp8.mp4",
+    "Rialto": "/static/sound/rlt27.mp4",
+    "Route 66": "/static/sound/rt69.mp4",
+    "Temple of Anubis": "/static/sound/toa.mp4",
+    "Volskaya Industries": "/static/sound/rsz1.mp4",
+    "Watchpoint Gibraltar": "/static/sound/grb71.mp4"
   }
 }

@@ -1,21 +1,16 @@
-
-
-import json
 import os
-import random
 import string
+from io import BytesIO
 
 from PIL import Image
 from flask import Flask, render_template, request, redirect, session
 from flask_login import login_user, LoginManager, login_required, logout_user
 
-from api import get_stats
 from data import db_session
 from data.__all_models import *
 from data.db_session import create_session
 from data.edit_form import EditForm
 from data.login_form import LoginForm
-from data.quiz_sound_form import QuizSound
 from data.register_form import RegisterForm
 from defs import *
 
@@ -30,9 +25,6 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 alph = string.digits + string.ascii_letters
-
-ids = list(range(1, 99999))
-quiz_id = {}
 
 with open("./static/json/quiz.json", encoding="utf8") as js:
     js = json.load(js)
@@ -157,13 +149,11 @@ def edit_account():
         user.battle_tag = form.battle_tag.data
         avatar = form.avatar.data.read()
         if len(avatar) > 0:
-            with open(f"/static/img/{form.id.data}.png", mode="wb") as av:
-                av.write(avatar)
-            user.avatar = f"/static/img/{form.id.data}.png"
-            user.avatar = f"/static/img/{form.id.data}.png"
-            crop_max_square(Image.open(f"/static/img/{form.id.data}.png")).save(
-                f"/static/img/{form.id.data}_thmb.png")
-            user.thumbnail = f"/static/img/{form.id.data}_thmb.png"
+            Image.open(BytesIO(avatar)).save(f"static/profile_pictures/{form.id.data}.png")
+            user.avatar = f"/static/profile_pictures/{form.id.data}.png"
+            crop_max_square(Image.open(f"static/profile_pictures/{form.id.data}.png")).save(
+                f"static/profile_pictures/{form.id.data}_thmb.png")
+            user.thumbnail = f"/static/profile_pictures/{form.id.data}_thmb.png"
         db_sess.commit()
         return redirect("/account")
     return render_template("edit_account.html", form=form)
@@ -199,40 +189,39 @@ def wiki_hero(name):
 
 @app.route("/quiz", methods=["POST", "GET"])
 def quiz():
+    session["score"] = 0
+    session["num"] = 0
+    session["sound"] = generate_quiz("sound")
+    # session["photo"] = generate_quiz("photo")
     if request.method == "POST" and request.form.get('player'):
         return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
-    id = ids.pop(0)
-    with open("static/json/quiz.json") as js:
-        quiz = json.load(js)
-    return render_template("quiz_main.html", quizs=quiz, id=id)
+    return render_template("quiz_main.html")
 
 
-@app.route("/quiz/soundtrack/<int:id>/<int:num>", methods=["POST", "GET"])
+@app.route("/quiz/soundtrack", methods=["POST", "GET"])
 def sound_quiz():
-    score, num = session.get("score", 0), session.get("num", 0)
-    if score or num:
-        session[]
     if request.method == "POST" and request.form.get('player'):
         return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
-    form = QuizSound()
-    if id not in quiz_id.keys():
-        quiz_id[id] = [random.sample(list(zip(list(sound.values()), sound.keys())), 5), 0, 0]
-        idk = []
-        for i in range(5):
-            answ = [quiz_id[id][0][i][1]]
-            temp = list(sound.keys())
-            temp.remove(answ[0])
-            answ.extend(random.sample(temp, 2))
-            random.shuffle(answ)
-            idk.append(answ)
-        quiz_id[id].append(idk)
-        form.radio.choices = idk[num]
-    else:
-        answ = quiz_id[id][3][num]
-        form.radio.choices = answ
-        if form.is_submitted():
-            print(form.radio.data)
-    return render_template("soundtrack_quiz.html", data=quiz_id[id], num=num, answ=answ, form=form)
+    try:
+        session["num"]
+    except KeyError:
+        session["num"] = 0
+        session["score"] = 0
+        session["sound"] = generate_quiz("sound")
+        # session["photo"] = generate_quiz("photo")
+    if request.method == "POST" and request.form.get("answer"):
+        answer = request.form.get("answer")
+        if answer == session["sound"][0][session["num"]][1]:
+            session["score"] += 1
+        session["num"] += 1
+        if session["num"] > 4:
+            temp = session["score"]
+            session["num"] = 0
+            session["score"] = 0
+            session["sound"] = generate_quiz("sound")
+            # session["photo"] = generate_quiz("photo")
+            return render_template("results.html", score=temp)
+    return render_template("soundtrack_quiz.html", num=session["num"], qz=session["sound"])
 
 
 @app.route("/logout")

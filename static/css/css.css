@@ -16,26 +16,15 @@ main {
     min-height: 82vh;
 }
 
-.sound-guess {
-    width: 30%;
-    margin-left: 35%;
-    text-align: center;
-}
-
-.aud {
-    margin-top: 40px;
-}
-
-.player-info {
+.centre-div {
     width: 30%;
     margin-left: 35%;
     margin-top: 20px;
     text-align: center;
 }
 
-.hero-info {
-    width: 30%;
-    margin-left: 35%;
+.aud {
+    margin-top: 40px;
 }
 
 .hero-card {
@@ -46,22 +35,10 @@ main {
     margin-left: 25px;
 }
 
-.centre-div {
-    width: 30%;
-    margin-left: 35%;
-    margin-top: 20px;
-}
-
 .user-image {
     border-radius: 50%;
     width: 32px;
     height: 32px;
-}
-
-.edit {
-    text-align: center;
-    width: 30%;
-    margin-left: 35%;
 }
 
 .user-info {
@@ -76,14 +53,6 @@ main {
 
 .user-info a {
     margin-top: 15px;
-}
-
-.orange {
-    color: orange;
-}
-
-.centre {
-    text-align: center;
 }
 
 .dropdown-text {
@@ -105,17 +74,6 @@ main {
     margin-top: 20px;
     display: flex;
     justify-content: space-around;
-}
-
-.register {
-    width: 30%;
-    margin-left: 35%;
-}
-
-.register_form {
-    text-align: center;
-    margin-top: 50px;
-    color: orange;
 }
 
 .ya-logo {
