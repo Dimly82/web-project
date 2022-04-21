@@ -11,8 +11,24 @@
             <code>audio</code> element
         </audio>
         <form method="post" action="">
-            {{ form.radio }}
-            {{ form.submit(type="submit", class="btn btn-primary", style="background: orange;") }}
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="{{ answ}}" id="radio1">
+              <label class="form-check-label" for="radio1">
+                {{ a }}
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio2">
+              <label class="form-check-label" for="radio2">
+                Default radio
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio3">
+              <label class="form-check-label" for="radio3">
+                Default radio
+              </label>
+            </div>
         </form>
     </div>
 {% endblock %}
