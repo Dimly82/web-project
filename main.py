@@ -4,7 +4,7 @@ import random
 import string
 
 from PIL import Image
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect
 from flask_login import login_user, LoginManager, login_required, logout_user
 
 from api import get_stats
@@ -13,6 +13,7 @@ from data.__all_models import *
 from data.db_session import create_session
 from data.edit_form import EditForm
 from data.login_form import LoginForm
+from data.quiz_sound_form import QuizSound
 from data.register_form import RegisterForm
 from defs import *
 
@@ -28,13 +29,12 @@ login_manager.init_app(app)
 
 alph = string.digits + string.ascii_letters
 
+ids = list(range(1, 99999))
 quiz_id = {}
 
 with open("./static/json/quiz.json", encoding="utf8") as js:
     js = json.load(js)
     sound = js["soundtrack"]
-    for key in sound.keys():
-        sound[key] = os.path.join("C:\\Users\\pdimo\\PycharmProjects\\web-project\\static\\sound", sound[key])
     photo = js["location"]
 
 
@@ -140,11 +140,13 @@ def edit_account():
             return render_template('edit_account.html',
                                    form=form,
                                    message="Nickname can't contain special symbols or spaces")
-        if form.email.data != user.email and db_sess.query(User).filter(User.email == form.email.data).first():
+        if form.email.data != user.email and db_sess.query(User).filter(
+                User.email == form.email.data).first():
             return render_template('edit_account.html',
                                    form=form,
                                    message="This email is already used")
-        if form.nickname.data != user.nickname and db_sess.query(User).filter(User.nickname == form.nickname.data).first():
+        if form.nickname.data != user.nickname and db_sess.query(User).filter(
+                User.nickname == form.nickname.data).first():
             return render_template('edit_account.html',
                                    form=form,
                                    message="This nickname is already taken")
@@ -165,15 +167,19 @@ def edit_account():
     return render_template("edit_account.html", form=form)
 
 
-@app.route("/wiki")
+@app.route("/wiki", methods=["POST", "GET"])
 def wiki():
+    if request.method == "POST" and request.form.get('player'):
+        return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
     with open("static/json/heroes.json") as js:
         heroes = json.load(js)
     return render_template("wiki_main.html", heroes=heroes)
 
 
-@app.route("/wiki/<string:name>")
+@app.route("/wiki/<string:name>", methods=["POST", "GET"])
 def wiki_hero(name):
+    if request.method == "POST" and request.form.get('player'):
+        return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
     with open("static/json/heroes.json") as js:
         heroes = json.load(js)
         try:
@@ -188,18 +194,40 @@ def wiki_hero(name):
                     return "Something went wrong"
     return render_template("hero_page.html", name=name, hero=hero)
 
-@app.route("/quiz")
+
+@app.route("/quiz", methods=["POST", "GET"])
 def quiz():
-    id = random.randint(1, 9999)
+    if request.method == "POST" and request.form.get('player'):
+        return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
+    id = ids.pop(0)
     with open("static/json/quiz.json") as js:
         quiz = json.load(js)
     return render_template("quiz_main.html", quizs=quiz, id=id)
 
 
-@app.route("/quiz/soundtrack/<int:id>/<int:num>")
+@app.route("/quiz/soundtrack/<int:id>/<int:num>", methods=["POST", "GET"])
 def sound_quiz(id, num):
-    quiz_id[id] = [random.sample(list(sound.values()), 5), 0, 0]
-    return render_template("soundtrack_quiz.html", data=quiz_id[id], num=num)
+    if request.method == "POST" and request.form.get('player'):
+        return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
+    form = QuizSound()
+    if id not in quiz_id.keys():
+        quiz_id[id] = [random.sample(list(zip(list(sound.values()), sound.keys())), 5), 0, 0]
+        idk = []
+        for i in range(5):
+            answ = [quiz_id[id][0][i][1]]
+            temp = list(sound.keys())
+            temp.remove(answ[0])
+            answ.extend(random.sample(temp, 2))
+            random.shuffle(answ)
+            idk.append(answ)
+        quiz_id[id].append(idk)
+        form.radio.choices = idk[num]
+    else:
+        answ = quiz_id[id][3][num]
+        form.radio.choices = answ
+    if form.validate_on_submit():
+        print(form.radio.data)
+    return render_template("soundtrack_quiz.html", data=quiz_id[id], num=num, answ=answ, form=form)
 
 
 @app.route("/logout")

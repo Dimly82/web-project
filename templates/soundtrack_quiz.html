@@ -7,8 +7,12 @@
 {% block content %}
     <div class="sound-guess">
         <h1>Guess the map</h1>
-        <audio class="aud" controls src="{{ data[0][num] }}" >Your browser doesn't support
+        <audio class="aud" controls src="{{ data[0][num][0] }}" >Your browser doesn't support
             <code>audio</code> element
         </audio>
+        <form method="post" action="">
+            {{ form.radio }}
+            {{ form.submit(type="submit", class="btn btn-primary", style="background: orange;") }}
+        </form>
     </div>
 {% endblock %}
