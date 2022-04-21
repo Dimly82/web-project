@@ -157,13 +157,13 @@ def edit_account():
         user.battle_tag = form.battle_tag.data
         avatar = form.avatar.data.read()
         if len(avatar) > 0:
-            with open(f"static/img/{form.id.data}.png", mode="wb") as av:
+            with open(f"/static/img/{form.id.data}.png", mode="wb") as av:
                 av.write(avatar)
-            user.avatar = f"static/img/{form.id.data}.png"
-            user.avatar = f"static/img/{form.id.data}.png"
-            crop_max_square(Image.open(f"static/img/{form.id.data}.png")).save(
-                f"static/img/{form.id.data}_thmb.png")
-            user.thumbnail = f"static/img/{form.id.data}_thmb.png"
+            user.avatar = f"/static/img/{form.id.data}.png"
+            user.avatar = f"/static/img/{form.id.data}.png"
+            crop_max_square(Image.open(f"/static/img/{form.id.data}.png")).save(
+                f"/static/img/{form.id.data}_thmb.png")
+            user.thumbnail = f"/static/img/{form.id.data}_thmb.png"
         db_sess.commit()
         return redirect("/account")
     return render_template("edit_account.html", form=form)
