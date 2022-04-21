@@ -101,13 +101,45 @@
   },
   "damage": {
     "Ashe": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/ashe/hero-select-portrait.png"
+      "https://d1u1mce87gyfbn.cloudfront.net/hero/ashe/hero-select-portrait.png",
+      "Elizabeth Caledonia Calamity Ashe",
+      39,
+      "American",
+      {
+        "lmb": ["The Viper", 40, 0, 0, 0],
+        "rmb": ["The Viper", 75, 0, 0, 0],
+        "lshift": ["Coach Gun", 90, 0, 0, 10],
+        "e": ["Dynamite", 50, 0, 5, 12],
+        "q": ["B.O.B.",  1092, 0, 10, "2240 points"]
+      },
+      "https://playoverwatch.com/en-gb/heroes/ashe/"
     ],
     "Bastion": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/bastion/hero-select-portrait.png"
+      "https://d1u1mce87gyfbn.cloudfront.net/hero/bastion/hero-select-portrait.png",
+      "SST Laboratories Siege Automaton E54",
+      	30,
+      "Omnic",
+      {
+        "lmb": ["Configuration: Recon", 20, 0, 0, 0],
+        "rmb": ["Self-Repair", 0, 90, 3.33, 1],
+        "lshift": ["Reconfigure", 15, 0, 1, 0],
+        "q": ["Configuration: Tank",  205, 0, 8, "2310 points"]
+      },
+      "https://playoverwatch.com/en-gb/heroes/bastion/"
     ],
     "McCree": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/cassidy/hero-select-portrait.png"
+      "https://d1u1mce87gyfbn.cloudfront.net/hero/cassidy/hero-select-portrait.png",
+      "Jesse McCree",
+      37,
+      "American",
+      {
+        "lmb": ["Peacekeeper", 70, 0, 0, 0],
+        "rmb": ["Peacekeeper", 50, 0, 0, 0],
+        "lshift": ["Combat Roll", 0, 0, 0.4, 6],
+        "e": ["Flashbang", 25, 0, 0.8, 10],
+        "q": ["Deadeye",  550, 0, 6.2, "1680 points"]
+      },
+      "https://playoverwatch.com/en-gb/heroes/name/"
     ],
     "Doomfist": [
       "https://d1u1mce87gyfbn.cloudfront.net/hero/doomfist/hero-select-portrait.png"
