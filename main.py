@@ -4,7 +4,7 @@ import random
 import string
 
 from PIL import Image
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session
 from flask_login import login_user, LoginManager, login_required, logout_user
 
 from api import get_stats
@@ -206,7 +206,10 @@ def quiz():
 
 
 @app.route("/quiz/soundtrack/<int:id>/<int:num>", methods=["POST", "GET"])
-def sound_quiz(id, num):
+def sound_quiz():
+    score, num = session.get("score", 0), session.get("num", 0)
+    if score or num:
+        session[]
     if request.method == "POST" and request.form.get('player'):
         return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
     form = QuizSound()
@@ -225,8 +228,8 @@ def sound_quiz(id, num):
     else:
         answ = quiz_id[id][3][num]
         form.radio.choices = answ
-    if form.validate_on_submit():
-        print(form.radio.data)
+        if form.is_submitted():
+            print(form.radio.data)
     return render_template("soundtrack_quiz.html", data=quiz_id[id], num=num, answ=answ, form=form)
 
 
