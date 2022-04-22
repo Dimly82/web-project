@@ -15,7 +15,7 @@
     </div>
     {% if stats %}
         <div class="centre-div">
-            <img src="{{ stats['icon'] }}" alt="">
+            <img src="{{ stats['icon'] }}" alt="Player Icon">
             <p style="font-size: 40px"><b>Name: {{ stats['name'] }}</b></p>
             <p style="font-size: 32px">Level: {{ 100 * stats['prestige'] + stats['level'] }}</p>
             {% if not stats['private'] %}
@@ -26,7 +26,7 @@
                     <p style="font-size: 32px">Games Won: {{ stats['competitiveStats']['games']['won'] }}</p>
                     {% if stats['rating'] %}
                         {% for rating in stats['ratings'] %}
-                            <p><img src="{{ rating['roleIcon'] }}" alt="">: {{ rating['level'] }}</p>
+                            <p><img src="{{ rating['roleIcon'] }}" alt="Role Icon">: {{ rating['level'] }}</p>
                         {% endfor %}
                     {% endif %}
                 </div>

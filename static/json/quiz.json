@@ -1,6 +1,10 @@
 {
   "location": {
-
+    "Ayutthaya": ["/static/maps/ayuth1.png", "/static/maps/ayuth2.png", "/static/maps/ayuth3.png"],
+    "Blizzard World": ["/static/maps/blizz1.png", "/static/maps/blizz2.png", "/static/maps/blizz3.png"],
+    "Busan": ["/static/maps/bus1.png", "/static/maps/bus2.png", "/static/maps/bus3.png"],
+    "Château Guillard": ["/static/maps/chat1.png", "/static/maps/chat2.png", "/static/maps/chat3.png"],
+    "Dorado": ["/static/maps/dorad1.png", "/static/maps/dorad2.png", "/static/maps/dorad3.png"]
   },
   "soundtrack": {
     "Ayutthaya": "/static/sound/a4th.mp4",

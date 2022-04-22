@@ -192,7 +192,8 @@ def quiz():
     session["score"] = 0
     session["num"] = 0
     session["sound"] = generate_quiz("sound")
-    # session["photo"] = generate_quiz("photo")
+    session["photo"] = generate_quiz("photo")
+    print(session["photo"])
     if request.method == "POST" and request.form.get('player'):
         return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
     return render_template("quiz_main.html")
@@ -208,7 +209,7 @@ def sound_quiz():
         session["num"] = 0
         session["score"] = 0
         session["sound"] = generate_quiz("sound")
-        # session["photo"] = generate_quiz("photo")
+        session["photo"] = generate_quiz("photo")
     if request.method == "POST" and request.form.get("answer"):
         answer = request.form.get("answer")
         if answer == session["sound"][0][session["num"]][1]:
@@ -219,9 +220,35 @@ def sound_quiz():
             session["num"] = 0
             session["score"] = 0
             session["sound"] = generate_quiz("sound")
-            # session["photo"] = generate_quiz("photo")
+            session["photo"] = generate_quiz("photo")
             return render_template("results.html", score=temp)
     return render_template("soundtrack_quiz.html", num=session["num"], qz=session["sound"])
+
+
+@app.route("/quiz/photo", methods=["POST", "GET"])
+def photo_quiz():
+    if request.method == "POST" and request.form.get('player'):
+        return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
+    try:
+        session["num"]
+    except KeyError:
+        session["num"] = 0
+        session["score"] = 0
+        session["sound"] = generate_quiz("sound")
+        session["photo"] = generate_quiz("photo")
+    if request.method == "POST" and request.form.get("answer"):
+        answer = request.form.get("answer")
+        if answer == session["photo"][0][session["num"]][1]:
+            session["score"] += 1
+        session["num"] += 1
+        if session["num"] > 4:
+            temp = session["score"]
+            session["num"] = 0
+            session["score"] = 0
+            session["sound"] = generate_quiz("sound")
+            session["photo"] = generate_quiz("photo")
+            return render_template("results.html", score=temp)
+    return render_template("photo_quiz.html", num=session["num"], qz=session["photo"])
 
 
 @app.route("/logout")
