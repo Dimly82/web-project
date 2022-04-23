@@ -12,7 +12,6 @@ footer {
 
 main {
     background-color: #212425;
-
     accent-color: grey;
     min-height: 82vh;
 }
@@ -86,7 +85,13 @@ main {
     color: orange;
     margin-top: 20px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+}
+
+@media (max-width: 700px) {
+    .btn-div {
+        flex-direction: column;
+    }
 }
 
 .ya-logo {
