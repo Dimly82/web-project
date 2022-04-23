@@ -3,6 +3,7 @@ import string
 from io import BytesIO
 
 import PIL
+import werkzeug.exceptions
 from PIL import Image
 from flask import Flask, render_template, request, redirect, session
 from flask_login import login_user, LoginManager, login_required, logout_user
@@ -271,13 +272,22 @@ def logout():
     return redirect("/")
 
 
-@app.errorhandler(404)
-@app.errorhandler(401)
+@app.errorhandler(Exception)
 def error_handle(error):
     e = error.code
-    return render_template("error.html", message=errors[e][0],
-                           img=errors[e][1], alt=errors[e][2],
-                           error=errors[e][3])
+    if e in errors:
+        return render_template("error.html", message=errors[e][0],
+                               img=errors[e][1], alt=errors[e][2],
+                               error=errors[e][3])
+    else:
+        return render_template("error.html", message="Something went wrong :(",
+                               img="/static/img/what.gif", alt="Doctor's confused",
+                               error=f"{error.code} {error.name}")
+
+
+@app.route("/raise_error")
+def raise_error():
+    raise werkzeug.exceptions.BadRequest
 
 
 if __name__ == '__main__':
