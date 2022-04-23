@@ -2,6 +2,7 @@ import os
 import string
 from io import BytesIO
 
+import PIL
 from PIL import Image
 from flask import Flask, render_template, request, redirect, session
 from flask_login import login_user, LoginManager, login_required, logout_user
@@ -23,6 +24,15 @@ db_session.global_init("db/users.sqlite")
 
 login_manager = LoginManager()
 login_manager.init_app(app)
+
+errors = {
+    404: ["Ooooopsies, looks like the page's missing..",
+            "/static/img/oops.gif", "Monkey killing a laptop",
+            "404 Not found"],
+    401: ["Looks like you're not authorised (´･ω･`)?",
+            "/static/img/hack.gif", "The russian hacker",
+            "401 Unauthorised"]
+}
 
 alph = string.digits + string.ascii_letters
 
@@ -149,7 +159,10 @@ def edit_account():
         user.battle_tag = form.battle_tag.data
         avatar = form.avatar.data.read()
         if len(avatar) > 0:
-            Image.open(BytesIO(avatar)).save(f"static/profile_pictures/{form.id.data}.png")
+            try:
+                Image.open(BytesIO(avatar)).save(f"static/profile_pictures/{form.id.data}.png")
+            except PIL.UnidentifiedImageError:
+                return render_template("edit_account.html", form=form, message="Wrong image format")
             user.avatar = f"/static/profile_pictures/{form.id.data}.png"
             crop_max_square(Image.open(f"static/profile_pictures/{form.id.data}.png")).save(
                 f"static/profile_pictures/{form.id.data}_thmb.png")
@@ -256,6 +269,15 @@ def photo_quiz():
 def logout():
     logout_user()
     return redirect("/")
+
+
+@app.errorhandler(404)
+@app.errorhandler(401)
+def error_handle(error):
+    e = error.code
+    return render_template("error.html", message=errors[e][0],
+                           img=errors[e][1], alt=errors[e][2],
+                           error=errors[e][3])
 
 
 if __name__ == '__main__':

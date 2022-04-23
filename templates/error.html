@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block import %}
+    <title>{{ error }}</title>
+{% endblock %}
+
+{% block content %}
+    <div class="centre-div">
+        <p class="alert alert-danger">{{ message }}</p>
+        <img src="{{ img }}" alt="{{ alt }}">
+    </div>
+{% endblock %}
