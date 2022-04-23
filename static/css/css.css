@@ -1,5 +1,6 @@
 body {
     background-color: #212425;
+    color: orange;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -11,9 +12,13 @@ footer {
 
 main {
     background-color: #212425;
-    color: orange;
+
     accent-color: grey;
     min-height: 82vh;
+}
+
+.my-btn {
+    color: orange;
 }
 
 .photo-quiz {
@@ -78,9 +83,10 @@ main {
 }
 
 .btn-div {
+    color: orange;
     margin-top: 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .ya-logo {
