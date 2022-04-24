@@ -29,11 +29,11 @@ login_manager.init_app(app)
 
 errors = {
     404: ["Ooooopsies, looks like the page's missing..",
-            "/static/img/oops.gif", "Monkey killing a laptop",
-            "404 Not found"],
+          "/static/img/oops.gif", "Monkey killing a laptop",
+          "404 Not found"],
     401: ["Looks like you're not authorised (´･ω･`)?",
-            "/static/img/hack.gif", "The russian hacker",
-            "401 Unauthorised"]
+          "/static/img/hack.gif", "The russian hacker",
+          "401 Unauthorised"]
 }
 
 alph = string.digits + string.ascii_letters
