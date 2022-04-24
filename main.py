@@ -11,6 +11,7 @@ from flask_login import login_user, LoginManager, login_required, logout_user
 from data import db_session
 from data.__all_models import *
 from data.db_session import create_session
+from data.delete_form import DeleteForm
 from data.edit_form import EditForm
 from data.login_form import LoginForm
 from data.register_form import RegisterForm
@@ -171,6 +172,27 @@ def edit_account():
         db_sess.commit()
         return redirect("/account")
     return render_template("edit_account.html", form=form)
+
+
+@app.route("/account/delete", methods=["POST", "GET"])
+@login_required
+def account_delete():
+    if request.method == "POST" and request.form.get('player'):
+        return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
+    form = DeleteForm()
+    if form.validate_on_submit():
+        db_sess = db_session.create_session()
+        user = db_sess.query(User).get(form.id.data)
+        print(11)
+        if user.check_password(form.password.data):
+            db_sess.delete(user)
+            db_sess.commit()
+            logout_user()
+            return redirect("/")
+        else:
+            return render_template("delete.html", form=form,
+                                   message="Wrong password")
+    return render_template("delete.html", form=form)
 
 
 @app.route("/wiki", methods=["POST", "GET"])

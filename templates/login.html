@@ -25,7 +25,7 @@
                         {{ error }}
                     </div>
                 {% endfor %}
-            <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+            <p>{{ form.remember_me(class="form-check-input") }} {{ form.remember_me.label }}</p>
             <p>{{ form.submit(type="submit", class="btn", style="background-color: orange;") }}</p>
             {% if message %}
                 <p class="alert alert-danger" role="alert">{{message}}</p>

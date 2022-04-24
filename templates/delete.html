@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block import %}
+    <title>Account deletion</title>
+{% endblock %}
+
+{% block content %}
+    <form class="centre-div" action="" method="post">
+        {{ form.hidden_tag() }}
+        <h1>Account deletion</h1>
+        {{ form.id(value=current_user.id, type="hidden") }}
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(class="form-control bg-dark", style="color: orange;", type="password") }}<br>
+            {% for error in form.password.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+            {% endfor %}
+        {% if message %}
+            <p class="alert alert-danger" role="alert">{{ message }}</p>
+        {% endif %}
+        <p>{{ form.submit(type="submit", class="btn btn-danger") }}</p>
+    </form>
+{% endblock %}
