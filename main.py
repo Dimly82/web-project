@@ -69,7 +69,7 @@ def search(player):
     if player:
         stats = get_stats(player)
         if not stats:
-            return render_template("search_main.html", meassage="Incorrect BattleTag")
+            return render_template("search_main.html", message="Incorrect BattleTag")
         return render_template("search.html", stats=stats)
     return render_template("search_main.html")
 
