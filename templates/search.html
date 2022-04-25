@@ -4,35 +4,25 @@
 <title>Searching...</title>
 {% endblock %}
 
-{% block content %}
+{% block cont %}
     <div class="centre-div">
-        <h1>Player Search</h1>
-        <form class="d-flex" method="post">
-            <input class="form-control me-2 bg-dark" type="search" placeholder="Search"
-                   aria-label="Search" style="color: orange" name="player">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <img src="{{ stats['icon'] }}" alt="Player Icon">
+        <p style="font-size: 40px"><b>Name: {{ stats['name'] }}</b></p>
+        <p style="font-size: 32px">Level: {{ 100 * stats['prestige'] + stats['level'] }}</p>
+        {% if not stats['private'] %}
+            <p style="font-size: 32px">Endorsement Level: {{ stats['endorsement'] }}</p>
+            <div class="competitive-stats">
+                <p style="font-size: 40px"><b>Competitive Stats:</b></p>
+                <p style="font-size: 32px">Games Played: {{ stats['competitiveStats']['games']['played'] }}</p>
+                <p style="font-size: 32px">Games Won: {{ stats['competitiveStats']['games']['won'] }}</p>
+                {% if stats['rating'] %}
+                    {% for rating in stats['ratings'] %}
+                        <p><img src="{{ rating['roleIcon'] }}" alt="Role Icon">: {{ rating['level'] }}</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        {% else %}
+            <p style="font-size: 32px">This profile is private :(</p>
+        {% endif %}
     </div>
-    {% if stats %}
-        <div class="centre-div">
-            <img src="{{ stats['icon'] }}" alt="Player Icon">
-            <p style="font-size: 40px"><b>Name: {{ stats['name'] }}</b></p>
-            <p style="font-size: 32px">Level: {{ 100 * stats['prestige'] + stats['level'] }}</p>
-            {% if not stats['private'] %}
-                <p style="font-size: 32px">Endorsement Level: {{ stats['endorsement'] }}</p>
-                <div class="competitive-stats">
-                    <p style="font-size: 40px"><b>Competitive Stats:</b></p>
-                    <p style="font-size: 32px">Games Played: {{ stats['competitiveStats']['games']['played'] }}</p>
-                    <p style="font-size: 32px">Games Won: {{ stats['competitiveStats']['games']['won'] }}</p>
-                    {% if stats['rating'] %}
-                        {% for rating in stats['ratings'] %}
-                            <p><img src="{{ rating['roleIcon'] }}" alt="Role Icon">: {{ rating['level'] }}</p>
-                        {% endfor %}
-                    {% endif %}
-                </div>
-            {% else %}
-                <p style="font-size: 32px">This profile is private :(</p>
-            {% endif %}
-        </div>
-    {% endif %}
 {% endblock %}

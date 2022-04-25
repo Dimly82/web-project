@@ -2,7 +2,7 @@ import json
 import random
 import requests
 
-API = "https://ow-api.com/v1/stats/pc/eu/"
+API = "https://ow-api.com/v1/stats/pc/eu"
 
 
 def get_stats(battletag):

@@ -57,14 +57,21 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/search")
+def search_main():
+    return render_template("search_main.html")
+
+
 @app.route("/search/<string:player>", methods=["POST", "GET"])
 def search(player):
     if request.method == "POST" and request.form.get('player'):
         return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
     if player:
         stats = get_stats(player)
+        if not stats:
+            return render_template("search_main.html", meassage="Incorrect BattleTag")
         return render_template("search.html", stats=stats)
-    return render_template("search.html")
+    return render_template("search_main.html")
 
 
 @app.route('/register', methods=['GET', 'POST'])
