@@ -296,6 +296,8 @@ def logout():
 
 @app.errorhandler(Exception)
 def error_handle(error):
+    if request.method == "POST" and request.form.get('player'):
+        return redirect(f"/search/{request.form.get('player').replace('#', '-')}")
     e = error.code
     if e in errors:
         return render_template("error.html", message=errors[e][0],
