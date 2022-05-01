@@ -41,7 +41,7 @@ def generate_quiz(type):
             random.shuffle(answ)
             idk.append(answ)
     elif type == "photo":
-        quests = list(random.sample(list(zip(list(map(lambda x: random.choice(x), list(photo.values()))), sound.keys())), 5))
+        quests = list(random.sample(list(zip(list(map(lambda x: random.choice(x), list(photo.values()))), photo.keys())), 5))
         idk = []
         for i in range(5):
             answ = [quests[i][1]]
