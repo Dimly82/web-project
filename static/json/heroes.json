@@ -139,7 +139,7 @@
         "e": ["Flashbang", 25, 0, 0.8, 10],
         "q": ["Deadeye",  550, 0, 6.2, "1680 points"]
       },
-      "https://playoverwatch.com/en-gb/heroes/name/"
+      "https://playoverwatch.com/en-gb/heroes/cassidy/"
     ],
     "Doomfist": [
       "https://d1u1mce87gyfbn.cloudfront.net/hero/doomfist/hero-select-portrait.png"
@@ -186,28 +186,116 @@
   },
   "tank": {
     "D.Va": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/dva/hero-select-portrait.png"
+      "https://d1u1mce87gyfbn.cloudfront.net/hero/dva/hero-select-portrait.png",
+      "Hana Song",
+      19,
+      "Korean",
+      {
+        "lmb": ["Fusion Cannons", 2, 0, 0, 0],
+        "rmb": ["Defense Matrix", 0, 0, 2, 1],
+        "lshift": ["Boosters", 10, 0, 2, 4],
+        "e": ["Micro Missiles", 7, 0, 0, 8],
+        "q": ["Self-Destruct",  1000, 0, 3, "1540 points"]
+      },
+      "https://playoverwatch.com/en-gb/heroes/dva/"
     ],
     "Orisa": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/orisa/hero-select-portrait.png"
+      "https://d1u1mce87gyfbn.cloudfront.net/hero/orisa/hero-select-portrait.png",
+      "Orisa",
+      "1 months",
+      "Numbanian",
+      {
+        "lmb": ["Fusion Driver", 11, 0, 0, 0],
+        "rmb": ["Halt!", 0, 0, 0.65, 6],
+        "lshift": ["Fortify", 0, "40% income damage reduction", 4, 10],
+        "e": ["Protective Barrier", 0, 600, 20, 10],
+        "q": ["Supercharger", "50% boost", 0, 15, "1680 points"]
+      },
+      "https://playoverwatch.com/en-gb/heroes/orisa/"
     ],
     "Reinhardt": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/reinhardt/hero-select-portrait.png"
+      "https://d1u1mce87gyfbn.cloudfront.net/hero/reinhardt/hero-select-portrait.png",
+      "Reinhardt Wilhelm",
+      61,
+      "German",
+      {
+        "lmb": ["Rocket Hammer", 85, 0, 0, 0],
+        "rmb": ["Barrier Field", 0, 1600, 0.65, 6],
+        "lshift": ["Charge", "50-300", 0, 3, 10],
+        "e": ["Fire Strike", 100, 0, 0, 6],
+        "q": ["Earthshatter", 50, 0, 2.5, "1540 points"]
+      },
+      "https://playoverwatch.com/en-gb/heroes/reinhardt/"
     ],
     "Roadhog": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/roadhog/hero-select-portrait.png"
+      "https://d1u1mce87gyfbn.cloudfront.net/hero/roadhog/hero-select-portrait.png",
+      "Mako Rutledge",
+      48,
+      "Australian",
+      {
+        "lmb": ["Scrap Gun", "49.5-165", 0, 0, 0],
+        "rmb": ["Scrap Gun", "49.5-165", 0, 0, 0],
+        "lshift": ["Chain Hook", 30, 0, 0, 8],
+        "e": ["Take a Breather", 0, 300, 1, 8],
+        "q": ["Whole Hog", 4928, 0, 5.5, "2240 points"]
+      },
+      "https://playoverwatch.com/en-gb/heroes/roadhog/"
     ],
     "Sigma": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/sigma/hero-select-portrait.png"
+      "https://d1u1mce87gyfbn.cloudfront.net/hero/sigma/hero-select-portrait.png",
+      "Siebren de Kuiper",
+      62,
+      "Dutch",
+      {
+        "lmb": ["Hyperspheres", 55, 0, 0, 0],
+        "rmb": ["Experimental Barrier", 0, 700, 0, "2-5"],
+        "lshift": ["Kinetic Grasp", 0, "max 400 dmg absorb", 2, 12],
+        "e": ["Accretion", 70, 0, 0.8, 10],
+        "q": ["Gravitic Flux", "50 + 50% max HP", 0, 7, "1960 points"]
+      },
+      "https://playoverwatch.com/en-gb/heroes/sigma/"
     ],
     "Winston": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/winston/hero-select-portrait.png"
+      "https://d1u1mce87gyfbn.cloudfront.net/hero/winston/hero-select-portrait.png",
+      "Winston",
+      29,
+      "Monkey",
+      {
+        "lmb": ["Tesla Cannon", 60, 0, 0, 0],
+        "lshift": ["Jump Pack", 50, 0, 0, 6],
+        "e": ["Barrier Projector", 0, 700, 9, 13],
+        "q": ["Primal Rage", 40, 0, 10, "1540 points"]
+      },
+      "https://playoverwatch.com/en-gb/heroes/winston/"
     ],
     "Wrecking Ball": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/wrecking-ball/hero-select-portrait.png"
+      "https://d1u1mce87gyfbn.cloudfront.net/hero/wrecking-ball/hero-select-portrait.png",
+      "Hammond",
+      14,
+      "Hamster",
+      {
+        "lmb": ["Quad Cannons", 5, 0, 0, 0],
+        "rmb": ["Grappling Claw", 50, 0, 6, 5],
+        "lshift": ["Roll", 0, 0, 0, 0],
+        "e": ["Adaptive Shield", 0, "100 + 75 per enemy", 9, 15],
+        "lctrl": ["Piledriver", 100, 0, 0, 10],
+        "q": ["Minefield", 130, 50, 20, "1540 points"]
+      },
+      "https://playoverwatch.com/en-gb/heroes/wrecking-ball/"
     ],
     "Zarya": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/zarya/hero-select-portrait.png"
+      "https://d1u1mce87gyfbn.cloudfront.net/hero/zarya/hero-select-portrait.png",
+      "Aleksandra Zaryanova",
+      28,
+      "Russian",
+      {
+        "lmb": ["Particle Cannon","75-170", 0, 0, 0],
+        "rmb": ["Particle Cannon", "47-95", 0, 0, 0],
+        "lshift": ["Particle Barrier", 0, 200, 2, 10],
+        "e": ["Projected Barrier", 0, 200, 2, 8],
+        "q": ["Graviton Surge", 18.72, 0, 4, "2100 points"]
+      },
+      "https://playoverwatch.com/en-gb/heroes/zarya/"
     ]
   }
 }

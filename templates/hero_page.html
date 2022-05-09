@@ -13,9 +13,9 @@
          <p>Abilities: </p>
          {% for key in hero[4].keys() %}
             {% set abil = hero[4][key] %}
-            <p>{{ key.upper() }}: {{ abil[0]}} - {{abil[1]}} DMG, {{abil[2]}} HEAL, {{abil[3]}} duration,
+            <p>{{ key.upper() }}: {{ abil[0]}} - {{abil[1]}} DMG, {{abil[2]}} HP, {{abil[3]}} duration,
                 {{abil[4]}} cooldown</p>
          {% endfor %}
-        <a class="btn" style="background: orange" type="button" href="{{ hero[5] }}">Official Info</a>
+        <a class="btn" style="background: orange" type="button" href="{{ hero[5] }}" target="_blank">Official Info</a>
     </div>
 {% endblock %}
