@@ -6,10 +6,11 @@
 
 {% block content %}
     <div class="centre-div">
+        <p style="margin-top: 20px" class="alert alert-danger">PLAYER SEARCH CURRENTLY UNAVAILABLE!</p>
         <h1>Player Search</h1>
         <form class="d-flex" method="post">
             <input class="form-control me-2 bg-dark" type="search" placeholder="Search"
-                   aria-label="Search" style="color: orange" name="player">
+                   aria-label="Search" style="color: orange" name="player" disabled> <!-- TODO: dont forget to remove disabled -->
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
         {% if message %}

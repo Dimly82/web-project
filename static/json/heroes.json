@@ -1,35 +1,35 @@
 {
   "support": {
     "Ana": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/ana/hero-select-portrait.png",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/3429c394716364bbef802180e9763d04812757c205e1b4568bc321772096ed86.png",
       "Ana Amari",
       60,
       "Egyptian",
       {
         "lmb": ["Unscoped", 70, 70, 0, 0],
         "rmb": ["Scoped", 70, 70, 0, 0],
-        "lshift": ["Sleep Dart", 5, 0, 5, 12],
-        "e": ["Biotic Grenade", 60, 100, 4, 10],
+        "lshift": ["Sleep Dart", 5, 0, 5, 15],
+        "e": ["Biotic Grenade", 60, 100, 3, 10],
         "q": ["Nano Boost", "+50%", 250, 8, "2100 points"]
       },
       "https://playoverwatch.com/en-gb/heroes/ana/"
     ],
     "Baptiste": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/baptiste/hero-select-portrait.png",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/f979896f74ba22db2a92a85ae1260124ab0a26665957a624365e0f96e5ac5b5c.png",
       "Jean-Baptiste Augustin",
       36,
       "Haitian",
       {
-        "lmb": ["Biotic Launcher", "7.2 - 24", 0, 0, 0],
+        "lmb": ["Biotic Launcher", "7.2 - 25", 0, 0, 0],
         "rmb": ["Biotic Launcher", 0, "50 - 70", 0, 0],
-        "lshift": ["Regenerative Burst", 0, "15 - 30", 5, 13],
+        "lshift": ["Regenerative Burst", "50 - 100 immediately + 50 over 5 seconds", "15 - 30", 5, 15],
         "e": ["Immortality Field", 0, 0, 5, 25],
         "q": ["Amplification Matrix", "+100%", "+100%", 10, "2310 points"]
       },
       "https://playoverwatch.com/en-gb/heroes/baptiste/"
     ],
     "Brigitte": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/brigitte/hero-select-portrait.png",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/48392820c6976ee1cd8dde13e71df85bf15560083ee5c8658fe7c298095d619a.png",
       "Brigitte Lindholm",
       23,
       "Swedish",
@@ -42,8 +42,22 @@
       },
       "https://playoverwatch.com/en-gb/heroes/brigitte/"
     ],
+    "Kiriko": [
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/088aff2153bdfa426984b1d5c912f6af0ab313f0865a81be0edd114e9a2f79f9.png",
+      "Kiriko Kamori",
+      20,
+      "Japanese",
+      {
+        "lmb": ["Healing Ofuda", 0, 26, 0, 0],
+        "rmb": ["Kunai", 40, 0, 0, 0],
+        "lshift": ["Swift Step", 0, 0, 0.4, 7],
+        "e": ["Protective Suzu", 0, 50, 1, 14],
+        "q": ["Kitsune Rush", "+50% rate of fire", 0, 10.5, "2300 points"]
+      },
+      "https://playoverwatch.com/en-gb/heroes/kiriko/"
+    ],
     "Lucio": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/lucio/hero-select-portrait.png",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/7fc54a1056e11892e1f5366fc15ad50e0e4b4691dedb58ee25da6ee853f3408e.png",
       "Lucio Correia dos Santos",
       26,
       "Brazilian",
@@ -51,13 +65,13 @@
         "lmb": ["Sonic Amplifier", 20, 0, 0, 0],
         "rmb": ["Soundwave", 25, 0, 0, 4],
         "lshift": ["Crossfade", 0, 16, 0, 0],
-        "e": ["Amp It Up", 0, 52, 3, 12],
-        "q": ["Sound Barrier", 0, 750, 7, "2940 points"]
+        "e": ["Amp It Up", 0, 50, 3, 12],
+        "q": ["Sound Barrier", 0, 750, 6, "2587 points"]
       },
       "https://playoverwatch.com/en-gb/heroes/lucio/"
     ],
     "Mercy": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/mercy/hero-select-portrait.png",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/2508ddd39a178d5f6ae993ab43eeb3e7961e5a54a9507e6ae347381193f28943.png",
       "Angela Ziegler",
       37,
       "Swiss",
@@ -71,7 +85,7 @@
       "https://playoverwatch.com/en-gb/heroes/mercy/"
     ],
     "Moira": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/moira/hero-select-portrait.png",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/000beeb5606e01497897fa9210dd3b1e78e1159ebfd8afdc9e989047d7d3d08f.png",
       "Moira O'Deorain",
       48,
       "Irish",
@@ -85,15 +99,15 @@
       "https://playoverwatch.com/en-gb/heroes/moira/"
     ],
     "Zenyatta": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/zenyatta/hero-select-portrait.png",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/71cabc939c577581f66b952f9c70891db779251e8e70f29de3c7bf494edacfe4.png",
       "Tekhartha Zenyatta",
       20,
-      "Omnic",
+      "Nepali",
       {
         "lmb": ["Orb of Destruction", 48, 0, 0, 0],
         "rmb": ["Orb of Destruction", 240, 0, 0, 0],
         "lshift": ["Orb of Harmony", 0, 30, 3, 0],
-        "e": ["Orb of Discord", "+25%", 0, 3, 0],
+        "e": ["Orb of Discord", "+25%", 0, 2, 0],
         "q": ["Transcendence", 0, 300, 6, "2310 points"]
       },
       "https://playoverwatch.com/en-gb/heroes/zenyatta/"
@@ -101,7 +115,7 @@
   },
   "damage": {
     "Ashe": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/ashe/hero-select-portrait.png",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/8dc2a024c9b7d95c7141b2ef065590dbc8d9018d12ad15f76b01923986702228.png",
       "Elizabeth Caledonia Calamity Ashe",
       39,
       "American",
@@ -115,7 +129,7 @@
       "https://playoverwatch.com/en-gb/heroes/ashe/"
     ],
     "Bastion": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/bastion/hero-select-portrait.png",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4d715f722c42215072b5dd0240904aaed7b5285df0b2b082d0a7f1865b5ea992.png",
       "SST Laboratories Siege Automaton E54",
       	30,
       "Omnic",
@@ -128,7 +142,7 @@
       "https://playoverwatch.com/en-gb/heroes/bastion/"
     ],
     "McCree": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/cassidy/hero-select-portrait.png",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/6cfb48b5597b657c2eafb1277dc5eef4a07eae90c265fcd37ed798189619f0a5.png",
       "Jesse McCree",
       37,
       "American",
@@ -141,94 +155,122 @@
       },
       "https://playoverwatch.com/en-gb/heroes/cassidy/"
     ],
-    "Doomfist": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/doomfist/hero-select-portrait.png"
-    ],
     "Echo": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/echo/hero-select-portrait.png"
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/f086bf235cc6b7f138609594218a8385c8e5f6405a39eceb0deb9afb429619fe.png"
     ],
     "Genji": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/genji/hero-select-portrait.png"
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4edf5ea6d58c449a2aeb619a3fda9fff36a069dfbe4da8bc5d8ec1c758ddb8dc.png"
     ],
     "Hanzo": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/hanzo/hero-select-portrait.png"
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/aecd8fa677f0093344fab7ccb7c37516c764df3f5ff339a5a845a030a27ba7e0.png"
     ],
     "Junkrat": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/junkrat/hero-select-portrait.png"
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/037e3df083624e5480f8996821287479a375f62b470572a22773da0eaf9441d0.png"
     ],
     "Mei": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/mei/hero-select-portrait.png"
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/1533fcb0ee1d3f9586f84b4067c6f63eca3322c1c661f69bfb41cd9e4f4bcc11.png"
     ],
     "Pharah": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/pharah/hero-select-portrait.png"
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/f8261595eca3e43e3b37cadb8161902cc416e38b7e0caa855f4555001156d814.png"
     ],
     "Reaper": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/reaper/hero-select-portrait.png"
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/2edb9af69d987bb503cd31f7013ae693640e692b321a73d175957b9e64394f40.png"
+    ],
+    "Sojourn": [
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/a53bf7ad9d2f33aaf9199a00989f86d4ba1f67c281ba550312c7d96e70fec4ea.png"
     ],
     "Soldier: 76": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/soldier-76/hero-select-portrait.png"
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/20b4ef00ed05d6dba75df228241ed528df7b6c9556f04c8070bad1e2f89e0ff5.png"
     ],
     "Sombra": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/sombra/hero-select-portrait.png"
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/bca8532688f01b071806063b9472f1c0f9fc9c7948e6b59e210006e69cec9022.png"
     ],
     "Symmetra": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/symmetra/hero-select-portrait.png"
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/7f2024c5387c9d76d944a5db021c2774d1e9d7cbf39e9b6a35b364d38ea250ac.png"
     ],
     "Torbjorn": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/torbjorn/hero-select-portrait.png"
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/1309ab1add1cc19189a2c8bc7b1471f88efa1073e9705d2397fdb37d45707d01.png"
     ],
     "Tracer": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/tracer/hero-select-portrait.png"
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/a66413200e934da19540afac965cfe8a2de4ada593d9a52d53108bb28e8bbc9c.png"
     ],
     "Widowmaker": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/widowmaker/hero-select-portrait.png"
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/a714f1cb33cc91c6b5b3e89ffe7e325b99e7c89cc8e8feced594f81305147efe.png"
     ]
   },
   "tank": {
     "D.Va": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/dva/hero-select-portrait.png",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/ca114f72193e4d58a85c087e9409242f1a31e808cf4058678b8cbf767c2a9a0a.png",
       "Hana Song",
       19,
       "Korean",
       {
         "lmb": ["Fusion Cannons", 2, 0, 0, 0],
-        "rmb": ["Defense Matrix", 0, 0, 2, 1],
-        "lshift": ["Boosters", 10, 0, 2, 4],
-        "e": ["Micro Missiles", 7, 0, 0, 8],
+        "rmb": ["Defense Matrix", 0, 0, 3, 1],
+        "lshift": ["Boosters", 17, 0, 2, 4],
+        "e": ["Micro Missiles", 7, 0, 0, 7],
         "q": ["Self-Destruct",  1000, 0, 3, "1540 points"]
       },
       "https://playoverwatch.com/en-gb/heroes/dva/"
     ],
+        "Doomfist": [
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/13750471c693c1a360eb19d5ace229c8599a729cd961d72ebee0e157657b7d18.png",
+          "Akande Ogundimu",
+          "45",
+          "Nigerian",
+          {
+            "lmb": ["Hand Cannon", 55, 0, 0, 0],
+            "rmb": ["Rocket Punch", 70, 0, 0.5, 3],
+            "lshift": ["Power Block", 0, "80% damage reduction", 2, 8],
+            "e": ["Seismic Slam", 50, 0, 0, 7],
+            "q": ["Meteor Strike", 300, 0, 4, "1680 points"]
+          },
+          "https://playoverwatch.com/en-gb/heroes/doomfist/"
+    ],
+    "Junker Queen": [
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/cef2406b2244b80506f83b8fb9ebaf214f41fa8795cbeef84026cd8018561d04.png",
+      "Odessa 'Dez' Stone",
+      "35 - 40",
+      "Australian",
+      {
+        "lmb": ["Scattergun", 80, 0, 0, 0],
+        "rmb": ["Jagged Blade", "80 + 15 over 3 seconds", 0,  0, 6],
+        "lshift": ["Commanding Shout", 0, 200, 5, 15],
+        "e": ["Carnage", "90 + 40 over 3 seconds", 0, 1, 8],
+        "q": ["Rampage", "100 over 5 seconds", "100 over 5 seconds", 5, "2520 points"]
+      },
+      "https://playoverwatch.com/en-gb/heroes/junker-queen/"
+    ],
     "Orisa": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/orisa/hero-select-portrait.png",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/71e96294617e81051d120b5d04b491bb1ea40e2933da44d6631aae149aac411d.png",
       "Orisa",
-      "1 months",
+      "1 month",
       "Numbanian",
       {
-        "lmb": ["Fusion Driver", 11, 0, 0, 0],
-        "rmb": ["Halt!", 0, 0, 0.65, 6],
-        "lshift": ["Fortify", 0, "40% income damage reduction", 4, 10],
-        "e": ["Protective Barrier", 0, 600, 20, 10],
-        "q": ["Supercharger", "50% boost", 0, 15, "1680 points"]
+        "lmb": ["Augmented Fusion Driver", 12, 0, 0, 0],
+        "rmb": ["Energy Javelin", 100, 0, 0.5, 6],
+        "lshift": ["Fortify", 0, "40% income damage reduction", 4.5, 12],
+        "e": ["Javelin Spin", 100, 0, 1.75, 7],
+        "q": ["Terra Surge", 570, 125, 4, "1950 points"]
       },
       "https://playoverwatch.com/en-gb/heroes/orisa/"
     ],
     "Reinhardt": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/reinhardt/hero-select-portrait.png",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/490d2f79f8547d6e364306af60c8184fb8024b8e55809e4cc501126109981a65.png",
       "Reinhardt Wilhelm",
       61,
       "German",
       {
         "lmb": ["Rocket Hammer", 85, 0, 0, 0],
-        "rmb": ["Barrier Field", 0, 1600, 0.65, 6],
-        "lshift": ["Charge", "50-300", 0, 3, 10],
-        "e": ["Fire Strike", 100, 0, 0, 6],
-        "q": ["Earthshatter", 50, 0, 2.5, "1540 points"]
+        "rmb": ["Barrier Field", 0, 1200, 0.37, 5],
+        "lshift": ["Charge", "50-275", 0, 3, 8],
+        "e": ["Fire Strike", 90, 0, 1, 6],
+        "q": ["Earthshatter", 250, 0, 2, "1540 points"]
       },
       "https://playoverwatch.com/en-gb/heroes/reinhardt/"
     ],
     "Roadhog": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/roadhog/hero-select-portrait.png",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/72e02e747b66b61fcbc02d35d350770b3ec7cbaabd0a7ca17c0d82743d43a7e8.png",
       "Mako Rutledge",
       48,
       "Australian",
@@ -236,13 +278,13 @@
         "lmb": ["Scrap Gun", "49.5-165", 0, 0, 0],
         "rmb": ["Scrap Gun", "49.5-165", 0, 0, 0],
         "lshift": ["Chain Hook", 30, 0, 0, 8],
-        "e": ["Take a Breather", 0, 300, 1, 8],
+        "e": ["Take a Breather", 0, 350, 2, 8],
         "q": ["Whole Hog", 4928, 0, 5.5, "2240 points"]
       },
       "https://playoverwatch.com/en-gb/heroes/roadhog/"
     ],
     "Sigma": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/sigma/hero-select-portrait.png",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/cd7a4c0a0df8924afb2c9f6df864ed040f20250440c36ca2eb634acf6609c5e4.png",
       "Siebren de Kuiper",
       62,
       "Dutch",
@@ -250,50 +292,51 @@
         "lmb": ["Hyperspheres", 55, 0, 0, 0],
         "rmb": ["Experimental Barrier", 0, 700, 0, "2-5"],
         "lshift": ["Kinetic Grasp", 0, "max 400 dmg absorb", 2, 12],
-        "e": ["Accretion", 70, 0, 0.8, 10],
-        "q": ["Gravitic Flux", "50 + 50% max HP", 0, 7, "1960 points"]
+        "e": ["Accretion", 100, 0, 0.8, 10],
+        "q": ["Gravitic Flux", "50 + 50% max HP", 0, 8, "1960 points"]
       },
       "https://playoverwatch.com/en-gb/heroes/sigma/"
     ],
     "Winston": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/winston/hero-select-portrait.png",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/bd9c8e634d89488459dfc1aeb21b602fa5c39aa05601a4167682f3a3fed4e0ee.png",
       "Winston",
       29,
       "Monkey",
       {
         "lmb": ["Tesla Cannon", 60, 0, 0, 0],
-        "lshift": ["Jump Pack", 50, 0, 0, 6],
-        "e": ["Barrier Projector", 0, 700, 9, 13],
-        "q": ["Primal Rage", 40, 0, 10, "1540 points"]
+        "rmb": ["Tesla Cannon", 50, 0, 0, 0],
+        "lshift": ["Jump Pack", 50, 0, 0, 5],
+        "e": ["Barrier Projector", 0, 700, 8, 12],
+        "q": ["Primal Rage", 40, 0, 10, "1863 points"]
       },
       "https://playoverwatch.com/en-gb/heroes/winston/"
     ],
     "Wrecking Ball": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/wrecking-ball/hero-select-portrait.png",
-      "Hammond",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/5c18e39ce567ee8a84078f775b9f76a2ba891de601c059a3d2b46b61ae4afb42.png",
+      "Miley Cyrus(joke)",
       14,
       "Hamster",
       {
         "lmb": ["Quad Cannons", 5, 0, 0, 0],
         "rmb": ["Grappling Claw", 50, 0, 6, 5],
         "lshift": ["Roll", 0, 0, 0, 0],
-        "e": ["Adaptive Shield", 0, "100 + 75 per enemy", 9, 15],
+        "e": ["Adaptive Shield", 0, "100 + 100 per enemy", 9, 15],
         "lctrl": ["Piledriver", 100, 0, 0, 10],
         "q": ["Minefield", 130, 50, 20, "1540 points"]
       },
       "https://playoverwatch.com/en-gb/heroes/wrecking-ball/"
     ],
     "Zarya": [
-      "https://d1u1mce87gyfbn.cloudfront.net/hero/zarya/hero-select-portrait.png",
+      "https://d15f34w2p8l1cc.cloudfront.net/overwatch/8819ba85823136640d8eba2af6fd7b19d46b9ee8ab192a4e06f396d1e5231f7a.png",
       "Aleksandra Zaryanova",
       28,
       "Russian",
       {
-        "lmb": ["Particle Cannon","75-170", 0, 0, 0],
+        "lmb": ["Particle Cannon","85-170", 0, 0, 0],
         "rmb": ["Particle Cannon", "47-95", 0, 0, 0],
-        "lshift": ["Particle Barrier", 0, 200, 2, 10],
+        "lshift": ["Particle Barrier", 0, 200, 2.5, 10],
         "e": ["Projected Barrier", 0, 200, 2, 8],
-        "q": ["Graviton Surge", 18.72, 0, 4, "2100 points"]
+        "q": ["Graviton Surge", 17.5, 0, 3.5, "2100 points"]
       },
       "https://playoverwatch.com/en-gb/heroes/zarya/"
     ]

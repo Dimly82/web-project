@@ -22,7 +22,8 @@ app = Flask(__name__)
 SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
 
-db_session.global_init("db/users.sqlite")
+db_path = os.path.abspath("db/users.sqlite")
+db_session.global_init(db_path)
 
 login_manager = LoginManager()
 login_manager.init_app(app)

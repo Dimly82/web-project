@@ -9,7 +9,7 @@
     <h1>Tanks</h1>
     {% for hero in heroes['tank'].keys() %}
         <a class="hero-card btn btn-dark" type="button" href="/wiki/{{ hero }}">
-            <img src="{{ heroes['tank'][hero][0] }}" alt="">
+            <img src="{{ heroes['tank'][hero][0] }}" width="200" height="200" alt="{{ hero }}">
             <p style="font-size: 24px">{{ hero }}</p>
         </a>
     {% endfor %}
@@ -19,7 +19,7 @@
     <h1>Damage</h1>
     {% for hero in heroes['damage'].keys() %}
         <a class="hero-card btn btn-dark" type="button" href="/wiki/{{ hero }}">
-            <img src="{{ heroes['damage'][hero][0] }}" alt="">
+            <img src="{{ heroes['damage'][hero][0] }}" width="200" height="200" alt="{{ hero }}">
             <p style="font-size: 24px">{{ hero }}</p>
         </a>
     {% endfor %}
@@ -29,7 +29,7 @@
     <h1>Support</h1>
     {% for hero in heroes['support'].keys() %}
         <a class="hero-card btn btn-dark" type="button" href="/wiki/{{ hero }}">
-            <img src="{{ heroes['support'][hero][0] }}" alt="">
+            <img src="{{ heroes['support'][hero][0] }}" width="200" height="200" alt="{{ hero }}">
             <p style="font-size: 24px">{{ hero }}</p>
         </a>
     {% endfor %}
