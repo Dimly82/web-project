@@ -204,13 +204,24 @@
       "Hana Song",
       19,
       "Korean",
-      {
-        "lmb": ["Fusion Cannons", 2, 0, 0, 0],
-        "rmb": ["Defense Matrix", 0, 0, 3, 1],
-        "lshift": ["Boosters", 17, 0, 2, 4],
-        "e": ["Micro Missiles", 7, 0, 0, 7],
-        "q": ["Self-Destruct",  1000, 0, 3, "1540 points"]
-      },
+      [
+        ["https://d15f34w2p8l1cc.cloudfront.net/overwatch/29bd15ebb32c23483a59df18a79f71301b2128c05b2f8d0c052ab86e0715e07d.png"
+        ,"Fusion Cannons", "Damage: 0.6 - 2 HP", "-40% move speed penalty", "Ammo: ∞"],
+        ["https://d15f34w2p8l1cc.cloudfront.net/overwatch/24074dececa8bf7b57628509e70731916db62b5ab5b30660ac1727b20bbc5b4d.png",
+        "Light Gun", "Damage: 14 HP", "Ammo: 20"],
+        ["https://d15f34w2p8l1cc.cloudfront.net/overwatch/89d6beb25b21eacd5a181b96438436692d9ad403fcef19873e506f6d46ed37a3.png",
+        "Boosters", "Damage: 25 HP", "Duration: 2 sec", "Cooldown: 4 secs"],
+        ["https://d15f34w2p8l1cc.cloudfront.net/overwatch/2713a8ef6742f4009da072d66d382eb8ff3dd8e00828deadb5af1a93b0d8ce4b.png",
+        "Defense Matrix", "Range: 10 m", "Duration: 3 sec", "Cooldown: 6 sec to full charge"],
+        ["https://d15f34w2p8l1cc.cloudfront.net/overwatch/1787326d46d04aa10872fc30fe512ab3575781735110dfb178ff38da352facb7.png",
+        "Micro Missiles", "Damage: 7 HP per hit", "Cooldown: 7 sec"],
+        ["https://d15f34w2p8l1cc.cloudfront.net/overwatch/f76e4b710ceb71f2e260029fc8d0ad15b227e3f006ab1b6c0c4e44da98c2d614.png",
+        "Self-Destruct", "Damage: 1000 HP max", "Cast time: 3 sec", "Cost: 1540 points"],
+        ["https://d15f34w2p8l1cc.cloudfront.net/overwatch/848d8cd24eb0327a023a564447d79dd8b367c21a378d328cd92896a21b775219.png",
+        "Call Mech", "Damage: 250 HP in 2.5 m radius", "Cost: 280.9 points"],
+        ["https://d15f34w2p8l1cc.cloudfront.net/overwatch/692a603c9945e600b195d1fd56364979363926f42d950b95c4811e7047e94c97.png",
+        "Eject!", "D.Va ejects out of her mech when it's destroyed"]
+      ],
       "https://playoverwatch.com/en-gb/heroes/dva/"
     ],
         "Doomfist": [
@@ -218,13 +229,13 @@
           "Akande Ogundimu",
           "45",
           "Nigerian",
-          {
-            "lmb": ["Hand Cannon", 55, 0, 0, 0],
-            "rmb": ["Rocket Punch", 70, 0, 0.5, 3],
-            "lshift": ["Power Block", 0, "80% damage reduction", 2, 8],
-            "e": ["Seismic Slam", 50, 0, 0, 7],
-            "q": ["Meteor Strike", 300, 0, 4, "1680 points"]
-          },
+          [
+            ["Hand Cannon", 55, 0, 0, 0],
+            ["Rocket Punch", 70, 0, 0.5, 3],
+            ["Power Block", 0, "80% damage reduction", 2, 8],
+            ["Seismic Slam", 50, 0, 0, 7],
+            ["Meteor Strike", 300, 0, 4, "1680 points"]
+          ],
           "https://playoverwatch.com/en-gb/heroes/doomfist/"
     ],
     "Junker Queen": [

@@ -7,15 +7,21 @@
 {% block content %}
     <div class="centre-div">
          <h1>{{ name }}</h1>
-         <p>Real Name: {{ hero[1] }}</p>
-         <p>Age: {{ hero[2] }}</p>
-         <p>Nationality: {{ hero[3] }}</p>
-         <p>Abilities: </p>
-         {% for key in hero[4].keys() %}
-            {% set abil = hero[4][key] %}
-            <p>{{ key.upper() }}: {{ abil[0]}} - {{abil[1]}} DMG, {{abil[2]}} HP, {{abil[3]}} duration,
-                {{abil[4]}} cooldown</p>
-         {% endfor %}
-        <a class="btn" style="background: orange" type="button" href="{{ hero[5] }}" target="_blank">Official Info</a>
+        <p><b>Real Name:</b> {{ hero[1] }}</p>
+        <p><b>Age:</b> {{ hero[2] }}</p>
+        <p><b>Nationality:</b> {{ hero[3] }}</p>
+        <p><b>Abilities:</b> </p>
+        {% for abil in hero[4] %}
+{#            <p>{{ key.upper() }}: {{ abil[0]}} - {{abil[1]}} DMG, {{abil[2]}} HP, {{abil[3]}} duration,#}
+{#                {{abil[4]}} cooldown</p>#}
+             <div style="margin-top: 10px">
+                 <img src="{{ abil[0] }}" width="50px">
+                     <p style="font-size: 20px"><b>{{ abil[1] }}</b></p>
+                 {% for prop in abil[2:] %}
+                     {{ prop }};
+                 {% endfor %}
+             </div>
+        {% endfor %}
+        <a class="btn" style="background: orange; margin-top: 20px" type="button" href="{{ hero[5] }}" target="_blank">Official Info</a>
     </div>
 {% endblock %}
